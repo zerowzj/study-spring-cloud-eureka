@@ -3,7 +3,7 @@
     <!-- ============================== -->
     <!--             属性定义           -->
     <!-- ============================== -->
-    <property name="PROJECT_NAME" value="api-web"/>
+    <property name="PROJECT_NAME" value="spring-cloud-eureka"/>
     <property name="LOG_HOME" value="/app/logs/${PROJECT_NAME}"/>
     <!-- ============================== -->
     <!--             控制台             -->

@@ -1,12 +1,12 @@
-########## Configuration Start ##########
-
+########## Config Start ##########
+###
 server:
   port: 8010
-
+###
 spring:
   application:
     name: eureka-server
-
+###
 eureka:
   instance:
     hostname: eureka-server
@@ -15,8 +15,7 @@ eureka:
       defaultZone: http://${server.address}:${server.port}/eureka/
     registerWithEureka: true
     fetchRegistry: true
-
+###
 logging:
   config: classpath:logback.xml
-
-########## Cofiguration End ##########
+########## Cofig End ##########
