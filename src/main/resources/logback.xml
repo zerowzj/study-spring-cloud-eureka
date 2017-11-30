@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <!-- ============================== -->
-    <!--             属性定义           -->
-    <!-- ============================== -->
     <property name="PROJECT_NAME" value="spring-cloud"/>
     <property name="LOG_HOME" value="/app/logs/${PROJECT_NAME}"/>
-    <!-- ============================== -->
-    <!--             控制台             -->
-    <!-- ============================== -->
+
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] [%level] [%class:%line] - %m%n</pattern>
         </encoder>
     </appender>
+
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] [%level] [%class:%line] - %m%n</pattern>
@@ -22,6 +18,7 @@
             <MaxHistory>30</MaxHistory>
         </rollingPolicy>
     </appender>
+
     <root level="DEBUG">
         <appender-ref ref="FILE"/>
         <appender-ref ref="STDOUT"/>
