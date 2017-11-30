@@ -10,11 +10,12 @@
     </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/spring-cloud-eureka.log</File>
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] [%level] [%class:%line] - %m%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/spring-cloud-eureka.log</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/spring-cloud-eureka.log.%d{yyyy-MM-dd}</fileNamePattern>
             <MaxHistory>30</MaxHistory>
         </rollingPolicy>
     </appender>
