@@ -9,6 +9,8 @@ spring:
     name: eureka-server
 ###
 eureka:
+  server:
+    enableSelfPreservation: false
   instance:
     hostname: 127.0.0.1
   client:
