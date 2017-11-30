@@ -3,7 +3,7 @@
     <!-- ============================== -->
     <!--             属性定义           -->
     <!-- ============================== -->
-    <property name="PROJECT_NAME" value="spring-cloud-eureka"/>
+    <property name="PROJECT_NAME" value="spring-cloud"/>
     <property name="LOG_HOME" value="/app/logs/${PROJECT_NAME}"/>
     <!-- ============================== -->
     <!--             控制台             -->
@@ -13,8 +13,17 @@
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] [%level] [%class:%line] - %m%n</pattern>
         </encoder>
     </appender>
-
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] [%level] [%class:%line] - %m%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/spring-cloud-eureka.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+    </appender>
     <root level="DEBUG">
+        <appender-ref ref="FILE"/>
         <appender-ref ref="STDOUT"/>
     </root>
 </configuration>
