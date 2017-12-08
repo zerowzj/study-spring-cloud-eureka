@@ -22,4 +22,4 @@ eureka:
 ###
 logging:
   config: classpath:logback.xml
-########## Cofig End ##########
+########## Config End ##########
