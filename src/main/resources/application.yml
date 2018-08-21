@@ -6,7 +6,7 @@ server:
 ###
 spring:
   application:
-    name: eureka-server
+    name: service-eureka
 ###
 eureka:
   server:
