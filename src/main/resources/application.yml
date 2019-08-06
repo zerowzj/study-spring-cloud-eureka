@@ -1,6 +1,6 @@
 ###
 server:
-  #address: 127.0.0.1
+  address: 127.0.0.1
   port: 7000
 ###
 spring:
@@ -22,7 +22,7 @@ eureka:
     fetch-registry: false
     #服务中心地址
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
 ###
 logging:
   config: classpath:logback.xml
