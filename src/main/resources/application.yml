@@ -1,7 +1,7 @@
 ###
 server:
-  address: 127.0.0.1
-  port: 6000
+  #address: 127.0.0.1
+  port: 8761
 ###
 spring:
   application:
@@ -14,13 +14,15 @@ eureka:
   server:
     #自我保护
     enable-self-preservation: false
+  #在默认情况下erureka server也是一个eureka client，必须要指定一个 server
   client:
-    #
+    #禁止本身注册
     register-with-eureka: false
-    #
+    #禁止获取注册服务地址
     fetch-registry: false
+    #服务中心地址
     service-url:
-      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 ###
 logging:
   config: classpath:logback.xml
