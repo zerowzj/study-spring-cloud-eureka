@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @EnableEurekaServer
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "study.springcloud.eureka")
 public class SpringBootCfg {
 
 }
