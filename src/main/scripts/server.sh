@@ -6,7 +6,7 @@ LOG_FILE=/app/stdout.log
 JAVA_MEM_OPTS=" -server -Xms512M -Xmx512M -Xmn128M -Xss128M -XX:PermSize=128M -XX:MaxPermSize=512M"
 JAVA_GC_OPTS=" -XX:+PrintGC -XX:PrintGCDetails -XX:PrintGCTime"
 JAVA_OPTS=$JAVA_MEM_OPTS
-
+#
 #export JAVA_HOME
 #export PATH=$PATH:$JAVA_HOME/bin
 
