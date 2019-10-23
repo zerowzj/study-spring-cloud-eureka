@@ -1,7 +1,7 @@
 package study.springcloud.eureka;
 
 import org.springframework.boot.SpringApplication;
-import study.springcloud.eureka.support.config.SpringBootCfg;
+import study.springcloud.eureka.support.SpringBootCfg;
 
 public class Startup {
 

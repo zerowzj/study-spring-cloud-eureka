@@ -1,4 +1,4 @@
-package study.springcloud.eureka.support.config;
+package study.springcloud.eureka.support;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
