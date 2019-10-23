@@ -32,7 +32,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/web_debug.log.%d{yyyy_MM_dd}</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/web_debug.log.%d{yyyy-MM-dd}</fileNamePattern>
             <MaxHistory>30</MaxHistory>
         </rollingPolicy>
     </appender>
