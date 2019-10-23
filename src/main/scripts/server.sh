@@ -17,7 +17,7 @@ get_pid() {
 start() {
   pid=$(get_pid)
   if [ -z "$pid" ]; then
-    nohup java $JAVA_OPTS -jar $JAR_FILE >$LOG_FILE 2<&1 &
+    nohup java $JAVA_OPTS -jar $JAR_FILE >$LOG_FILE 2>&1 &
   fi
 }
 stop() {
