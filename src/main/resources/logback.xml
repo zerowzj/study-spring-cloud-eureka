@@ -8,6 +8,7 @@
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] [%5level] [%class:%line] - %m%n</pattern>
         </encoder>
     </appender>
+
     <appender name="FILE_DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] [%5level] [%class:%line] - %m%n</pattern>
@@ -22,6 +23,22 @@
             <MaxHistory>30</MaxHistory>
         </rollingPolicy>
     </appender>
+
+    <appender name="FILE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] [%5level] [%class:%line] - %m%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/web-error.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+    </appender>
+    
     <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] [%5level] [%class:%line] - %m%n</pattern>
@@ -40,6 +57,7 @@
     <root level="@root.level@">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE_DEBUG"/>
+        <appender-ref ref="FILE_INFO"/>
         <appender-ref ref="FILE_ERROR"/>
     </root>
 </configuration>
