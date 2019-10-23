@@ -9,9 +9,9 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EurekaStateChangeListener {
+public class EurekaListener {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(EurekaStateChangeListener.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(EurekaListener.class);
 
     @EventListener
     public void listen(EurekaInstanceCanceledEvent event) {
