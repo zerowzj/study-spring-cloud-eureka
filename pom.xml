@@ -44,11 +44,6 @@
                 <directory>src/main/resources</directory>
             </resource>
         </resources>
-        <plugins>
-            <plugin>
-                <groupId></groupId>
-            </plugin>
-        </plugins>
     </build>
 
     <profiles>
