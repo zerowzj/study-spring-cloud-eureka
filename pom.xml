@@ -19,6 +19,7 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.3.RELEASE</version>
     </parent>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -75,12 +76,18 @@
     <profiles>
         <profile>
             <id>dev</id>
+            <properties>
+                <env>dev</env>
+            </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
         <profile>
             <id>test</id>
+            <properties>
+                <env>test</env>
+            </properties>
         </profile>
     </profiles>
 </project>
