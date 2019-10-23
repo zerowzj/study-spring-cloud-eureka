@@ -61,13 +61,10 @@
         </filters>
         <resources>
             <resource>
-                <directory>src/main/profiles/${env}</directory>
-            </resource>
-            <resource>
                 <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.*</include>
-                </includes>
+<!--                <includes>-->
+<!--                    <include>**/*.*</include>-->
+<!--                </includes>-->
                 <filtering>true</filtering>
             </resource>
         </resources>
