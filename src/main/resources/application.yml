@@ -13,7 +13,7 @@ spring:
 # 注册中心配置
 eureka:
   instance:
-    hostname: http://114.67.102.8
+    hostname: 127.0.0.1
     lease-renewal-interval-in-seconds: 5
     #lease-expiration-duration-in-seconds: 15
   server:
