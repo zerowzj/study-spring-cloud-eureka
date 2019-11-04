@@ -8,12 +8,12 @@ logging:
 #
 spring:
   application:
-    name: springcloud-eureka
+    name: study-springcloud-eureka
 
 # 注册中心配置
 eureka:
   instance:
-    hostname: 127.0.0.1
+    hostname: http://114.67.102.8
     lease-renewal-interval-in-seconds: 5
     #lease-expiration-duration-in-seconds: 15
   server:
