@@ -1,4 +1,6 @@
 #!/bin/bash
+#解决Jenkins在构建完成后使用processTreeKiller杀掉了所有子进程的问题
+export BUILD_ID=dontkillme
 
 JAR_FILE=/app/study-springcloud-eureka/study-springcloud-eureka-1.0.jar
 LOG_FILE=/app/study-springcloud-eureka/stdout.log
