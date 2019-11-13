@@ -90,6 +90,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <googleContainerRegistryEnabled>false</googleContainerRegistryEnabled>
                     <!-- 上下文目录-->
 <!--                    <contextDirectory>${project.basedir}</contextDirectory>-->
                     <!-- 生成镜像时相关信息存储位置 -->
