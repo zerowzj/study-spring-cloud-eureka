@@ -93,12 +93,13 @@
                     <contextDirectory>${project.basedir}</contextDirectory>
                     <!-- 生成镜像时相关信息存储位置 -->
                     <dockerInfoDirectory>src/main/docker</dockerInfoDirectory>
-                    <dockerfile>src/main/docker/Dockerfile</dockerfile>
+                    <dockerFile>src/main/docker/Dockerfile</dockerFile>
 <!--                    <dockerConfigFile>src/main/docker</dockerConfigFile>-->
                     <!--镜像仓库-->
                     <repository>${docker.registry}/${docker.image.prefix}/${project.artifactId}</repository>
                     <!--镜像TAG，不指定默认为latest-->
                     <tag>1</tag>
+                    <dockerHost>http://114.67.102.8:2375</dockerHost>
                     <buildArgs>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
