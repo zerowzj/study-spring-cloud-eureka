@@ -81,10 +81,15 @@
                 <version>1.4.10</version>
                 <executions>
                     <execution>
-                        <id>default</id>
-                        <!--如果package时不想用docker打包,就注释掉这个goal-->
+                        <id>build</id>
                         <goals>
                             <goal>build</goal>
+                            <goal>tag</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>push</id>
+                        <goals>
                             <goal>push</goal>
                         </goals>
                     </execution>
