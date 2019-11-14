@@ -85,7 +85,7 @@
                         <!--如果package时不想用docker打包,就注释掉这个goal-->
                         <goals>
                             <goal>build</goal>
-                            <goal>tag</goal>
+<!--                            <goal>tag</goal>-->
                             <goal>push</goal>
                         </goals>
                     </execution>
