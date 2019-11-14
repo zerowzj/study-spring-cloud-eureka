@@ -78,7 +78,7 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>1.4.10</version>
+                <version>1.4.13</version>
                 <executions>
                     <execution>
                         <id>default</id>
@@ -98,9 +98,9 @@
 <!--                    <dockerInfoDirectory>src/main/docker</dockerInfoDirectory>-->
 <!--                    <dockerConfigFile>src/main/docker</dockerConfigFile>-->
                     <!--Dockerfile位置-->
-                    <dockerfile>src/main/docker/Dockerfile</dockerfile>
+<!--                    <dockerfile>src/main/docker/Dockerfile</dockerfile>-->
                     <!--镜像仓库-->
-                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                    <repository>${docker.image.prefix}/study-er</repository>
                     <!--镜像TAG，不指定默认为latest-->
                     <tag>1</tag>
                     <buildArgs>
