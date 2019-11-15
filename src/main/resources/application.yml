@@ -1,6 +1,5 @@
 #
 server:
-  #address: 114.67.102.8
   port: 7010
 #
 logging:
@@ -13,13 +12,15 @@ spring:
 # 注册中心配置
 eureka:
   instance:
-    hostname: 127.0.0.1
+    hostname:
+    instance-id:
     lease-renewal-interval-in-seconds: 5
     #lease-expiration-duration-in-seconds: 15
-  server:
-    enable-self-preservation: false
+
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false
