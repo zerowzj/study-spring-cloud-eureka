@@ -29,5 +29,3 @@ eureka:
     renewal-percent-threshold: 0.45
     #
     renewal-threshold-update-interval-ms: 1000
-
-
