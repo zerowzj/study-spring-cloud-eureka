@@ -34,9 +34,9 @@
     </dependencyManagement>
 
     <dependencies>
-        <!-- ======= -->
-        <!-- Eureka服务端 -->
-        <!-- ======= -->
+        <!-- ============ -->
+        <!-- Eureka服务端  -->
+        <!-- ============ -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
