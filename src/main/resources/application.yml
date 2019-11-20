@@ -32,3 +32,4 @@ eureka:
     renewal-percent-threshold: 0.85
     #更新续约阈值的间隔（分钟），默认15分钟
     renewal-threshold-update-interval-ms: 1000
+    batch-replication: false
