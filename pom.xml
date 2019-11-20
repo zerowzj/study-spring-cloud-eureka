@@ -35,7 +35,7 @@
 
     <dependencies>
         <!-- ==================== -->
-        <!-- Eureka服务端         -->
+        <!--（★）Eureka服务端    -->
         <!-- ==================== -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -95,12 +95,12 @@
                 <configuration>
                     <googleContainerRegistryEnabled>false</googleContainerRegistryEnabled>
                     <!-- 上下文目录-->
-<!--                    <contextDirectory>${project.basedir}</contextDirectory>-->
+                    <contextDirectory>${project.basedir}</contextDirectory>
                     <!-- 生成镜像时相关信息存储位置 -->
-<!--                    <dockerInfoDirectory>src/main/docker</dockerInfoDirectory>-->
-<!--                    <dockerConfigFile>src/main/docker</dockerConfigFile>-->
+                    <!--                    <dockerInfoDirectory>src/main/docker</dockerInfoDirectory>-->
+                    <!--                    <dockerConfigFile>src/main/docker</dockerConfigFile>-->
                     <!--Dockerfile位置-->
-<!--                    <dockerfile>src/main/docker/Dockerfile</dockerfile>-->
+                    <!--                    <dockerfile>src/main/docker/Dockerfile</dockerfile>-->
                     <!--镜像仓库-->
                     <repository>${docker.image.prefix}/${project.artifactId}</repository>
                     <!--镜像TAG，不指定默认为latest-->

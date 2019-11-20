@@ -9,7 +9,9 @@ spring:
   application:
     name: study-springcloud-eureka
 
-# 注册中心配置
+####################
+#（★）Eureka
+####################
 eureka:
   instance:
     hostname: 127.0.0.1
