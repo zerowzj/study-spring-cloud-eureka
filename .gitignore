@@ -22,6 +22,5 @@
 hs_err_pid*
 
 # 自定义
-/target/
-/.idea/
-*.iml
+/target
+/.idea
