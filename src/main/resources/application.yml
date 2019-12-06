@@ -33,7 +33,9 @@ eureka:
     eviction-interval-timer-in-ms: 60000
     #启用自我保护机制，默认为true
     enable-self-preservation: false
-    #15分钟内续约服务的比例小于0.85，则开启自我保护机制，在此期间不会清除已注册的任何服务（即便是无效服务）
-    #renewal-percent-threshold: 0.85
-    #更新续约阈值的间隔（ms），默认15分钟
+    #（续约相关）更新续约阈值的间隔（ms），默认15分钟
     renewal-threshold-update-interval-ms: 10000
+    #15分钟内续约服务的比例小于0.85，则开启自我保护机制，在此期间不会清除已注册的任何服务（即便是无效服务）
+    renewal-percent-threshold: 0.85
+    #
+    expected-client-renewal-interval-seconds: 60
