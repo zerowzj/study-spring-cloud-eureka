@@ -13,16 +13,19 @@ spring:
 #（★）Eureka
 ####################
 eureka:
+  # 实例配置
   instance:
     hostname: 127.0.0.1
     #该服务实例向注册中心发送心跳间隔（s），默认30
     lease-renewal-interval-in-seconds: 5
     #lease-expiration-duration-in-seconds: 15
+  # 客户端配置
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  # 服务端配置
   server:
     #启用自我保护机制，默认为true
     enable-self-preservation: false
