@@ -6,7 +6,7 @@ services:
     ports:
       - 7101:7100
     environment:
-      - eureka.instance.name=eureka-server1
+      - eureka.instance.hostname=eureka-server1
       - EUREKA_SERVER_LIST=http://eureka-server2:7102/eureka/,http://eureka-server3:7102/eureka/
     volumes:
       - /xdfapp:/xdfapp
@@ -18,7 +18,7 @@ services:
     ports:
       - 7102:7100
     environment:
-      - eureka.instance.name=eureka-server2
+      - eureka.instance.hostname=eureka-server2
       - EUREKA_SERVER_LIST=http://eureka-server1:7101/eureka/,http://eureka-server3:7102/eureka/
     volumes:
       - /xdfapp:/xdfapp
@@ -30,7 +30,7 @@ services:
     ports:
       - 7103:7100
     environment:
-      - eureka.instance.name=eureka-server3
+      - eureka.instance.hostname=eureka-server3
       - EUREKA_SERVER_LIST=http://eureka-server1:7101/eureka/,http://eureka-server2:7102/eureka/
     volumes:
       - /xdfapp:/xdfapp
