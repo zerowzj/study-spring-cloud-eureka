@@ -8,7 +8,6 @@ logging:
 spring:
   application:
     name: study-springcloud-eureka
-
 #########################
 #（★）Eureka Server
 #########################
