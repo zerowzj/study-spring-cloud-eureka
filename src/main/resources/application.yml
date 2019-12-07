@@ -25,7 +25,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: ${EUREKA_SERVER_LIST}
+      defaultZone: @eureka.client.defaultZone@
   #（3）服务端配置
   server:
     #清除无效服务实例的时间间隔（ms），默认60000
