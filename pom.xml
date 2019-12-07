@@ -63,7 +63,7 @@
 
     <build>
         <filters>
-            <filter>src/main/filters/${env}</filter>
+            <filter>src/main/filters/${env}.properties</filter>
         </filters>
         <resources>
             <resource>
