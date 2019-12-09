@@ -88,37 +88,37 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>1.4.13</version>
-                <executions>
-                    <execution>
-                        <id>default</id>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>push</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <googleContainerRegistryEnabled>false</googleContainerRegistryEnabled>
-                    <!-- 上下文目录-->
-                    <contextDirectory>${project.basedir}</contextDirectory>
-                    <!-- 生成镜像时相关信息存储位置 -->
-                    <!--                    <dockerInfoDirectory>src/main/docker</dockerInfoDirectory>-->
-                    <!--                    <dockerConfigFile>src/main/docker</dockerConfigFile>-->
-                    <!--Dockerfile位置-->
-                    <!--                    <dockerfile>src/main/docker/Dockerfile</dockerfile>-->
-                    <!--镜像仓库-->
-                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
-                    <!--镜像TAG，不指定默认为latest-->
-                    <tag>1</tag>
-                    <buildArgs>
-                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-                    </buildArgs>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.spotify</groupId>-->
+<!--                <artifactId>dockerfile-maven-plugin</artifactId>-->
+<!--                <version>1.4.13</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>default</id>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <googleContainerRegistryEnabled>false</googleContainerRegistryEnabled>-->
+<!--                    &lt;!&ndash; 上下文目录&ndash;&gt;-->
+<!--                    <contextDirectory>${project.basedir}</contextDirectory>-->
+<!--                    &lt;!&ndash; 生成镜像时相关信息存储位置 &ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <dockerInfoDirectory>src/main/docker</dockerInfoDirectory>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <dockerConfigFile>src/main/docker</dockerConfigFile>&ndash;&gt;-->
+<!--                    &lt;!&ndash;Dockerfile位置&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <dockerfile>src/main/docker/Dockerfile</dockerfile>&ndash;&gt;-->
+<!--                    &lt;!&ndash;镜像仓库&ndash;&gt;-->
+<!--                    <repository>${docker.image.prefix}/${project.artifactId}</repository>-->
+<!--                    &lt;!&ndash;镜像TAG，不指定默认为latest&ndash;&gt;-->
+<!--                    <tag>1</tag>-->
+<!--                    <buildArgs>-->
+<!--                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>-->
+<!--                    </buildArgs>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
