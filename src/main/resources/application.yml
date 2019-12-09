@@ -38,3 +38,4 @@ eureka:
     renewal-percent-threshold: 0.85
     #
     expected-client-renewal-interval-seconds: 60
+
