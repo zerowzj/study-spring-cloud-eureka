@@ -19,11 +19,11 @@ eureka:
     lease-renewal-interval-in-seconds: 30
     #lease-expiration-duration-in-seconds: 15
     #
-    prefer-ip-address: true
+    #prefer-ip-address: true
   #（2）客户端配置
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: @eureka.client.defaultZone@
   #（3）服务端配置
