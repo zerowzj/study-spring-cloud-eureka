@@ -26,8 +26,8 @@ eureka:
     lease-expiration-duration-in-seconds: 5
   #（2）客户端配置
   client:
-    register-with-eureka: true
-    fetch-registry: true
+    register-with-eureka: false
+    fetch-registry: false
     service-url:
       defaultZone: @eureka.client.defaultZone@
   #（3）服务端配置
