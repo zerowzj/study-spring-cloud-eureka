@@ -24,28 +24,6 @@ services:
       - /xdfapp:/xdfapp
     networks:
       - demo_net
-  study-springcloud-provider1:
-    image: study/study-springcloud-provider:1
-    restart: always
-    ports:
-      - 7201:7200
-    environment:
-      - EUREKA_SERVER_LIST=http://114.67.102.8:7101/eureka/,http://114.67.102.8:7102/eureka/
-    volumes:
-      - /xdfapp:/xdfapp
-    networks:
-      - demo_net
-  study-springcloud-provider2:
-    image: study/study-springcloud-provider:1
-    restart: always
-    ports:
-      - 7202:7200
-    environment:
-      - EUREKA_SERVER_LIST=http://114.67.102.8:7101/eureka/,http://114.67.102.8:7102/eureka/
-    volumes:
-      - /xdfapp:/xdfapp
-    networks:
-      - demo_net
 networks:
   demo_net:
     external: true
