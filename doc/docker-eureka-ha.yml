@@ -1,4 +1,4 @@
-version: '3'
+version: '3.6'
 services:
   study-springcloud-eureka1:
     image: study/study-springcloud-eureka:1
@@ -6,8 +6,8 @@ services:
     ports:
       - 7101:7100
     environment:
-      - eureka.instance.hostname=eureka-server1
-      - EUREKA_SERVER_LIST=http://eureka-server2:7102/eureka/,http://eureka-server3:7103/eureka/
+      #- eureka.instance.hostname=eureka-server1
+      - EUREKA_SERVER_LIST=http://114.67.102.8:7102/eureka/
     volumes:
       - /xdfapp:/xdfapp
     networks:
@@ -18,20 +18,8 @@ services:
     ports:
       - 7102:7100
     environment:
-      - eureka.instance.hostname=eureka-server2
-      - EUREKA_SERVER_LIST=http://eureka-server1:7101/eureka/,http://eureka-server3:7103/eureka/
-    volumes:
-      - /xdfapp:/xdfapp
-    networks:
-      - demo_net
-  study-springcloud-eureka3:
-    image: study/study-springcloud-eureka:1
-    restart: always
-    ports:
-      - 7103:7100
-    environment:
-      - eureka.instance.hostname=eureka-server3
-      - EUREKA_SERVER_LIST=http://eureka-server1:7101/eureka/,http://eureka-server2:7102/eureka/
+      #- eureka.instance.hostname=eureka-server2
+      - EUREKA_SERVER_LIST=http://114.67.102.8:7101/eureka/
     volumes:
       - /xdfapp:/xdfapp
     networks:
