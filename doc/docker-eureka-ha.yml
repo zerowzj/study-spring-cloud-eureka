@@ -6,8 +6,8 @@ services:
     ports:
       - 7101:7100
     environment:
-      - eureka.instance.hostname=eureka-server1
-      - EUREKA_SERVER_LIST=http://eureka-server2:7100/eureka/
+      #- eureka.instance.hostname=eureka-server1
+      - EUREKA_SERVER_LIST=http://114.67.102.8:7102/eureka/
     volumes:
       - /xdfapp:/xdfapp
     networks:
@@ -18,8 +18,8 @@ services:
     ports:
       - 7102:7100
     environment:
-      - eureka.instance.hostname=eureka-server2
-      - EUREKA_SERVER_LIST=http://eureka-server1:7100/eureka/
+      #- eureka.instance.hostname=eureka-server2
+      - EUREKA_SERVER_LIST=http://114.67.102.8:7101/eureka/
     volumes:
       - /xdfapp:/xdfapp
     networks:

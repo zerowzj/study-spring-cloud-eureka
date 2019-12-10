@@ -14,15 +14,16 @@ spring:
 eureka:
   #（1）实例配置
   instance:
-    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
     #主机
-    hostname: study-springcloud-eureka
+    hostname: ${spring.cloud.client.ip-address}:${server.port}
+    #实例id
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    #
+    prefer-ip-address: true
     #该服务实例向注册中心发送心跳间隔（s），默认30
     lease-renewal-interval-in-seconds: 30
     #
-    lease-expiration-duration-in-seconds: 5
-    #
-    prefer-ip-address: false
+    lease -expiration-duration-in-seconds: 5
   #（2）客户端配置
   client:
     register-with-eureka: true
