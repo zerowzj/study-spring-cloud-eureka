@@ -14,9 +14,11 @@ spring:
 eureka:
   #（1）实例配置
   instance:
-    #hostname: 127.0.0.1
+    #主机
+    hostname: study-springcloud-eureka
     #该服务实例向注册中心发送心跳间隔（s），默认30
     lease-renewal-interval-in-seconds: 30
+    #
     #lease-expiration-duration-in-seconds: 15
     #
     prefer-ip-address: true
