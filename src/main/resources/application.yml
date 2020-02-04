@@ -12,14 +12,14 @@ spring:
 #（★）Eureka Server
 #########################
 eureka:
-  #实例配置
+  #（▲）实例配置
   instance:
     #hostname: ${spring.cloud.client.ip-address}:${server.port}
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 30
     lease-expiration-duration-in-seconds: 5
-  #客户端配置
+  #（▲）客户端配置
   client:
     register-with-eureka: false
     fetch-registry: false
