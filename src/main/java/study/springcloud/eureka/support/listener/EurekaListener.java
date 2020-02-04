@@ -1,15 +1,13 @@
 package study.springcloud.eureka.support.listener;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.netflix.eureka.server.event.*;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 public class EurekaListener {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(EurekaListener.class);
 
     /**
      * 服务下线
@@ -18,7 +16,7 @@ public class EurekaListener {
     public void listen(EurekaInstanceCanceledEvent event) {
         event.getServerId();
         event.getAppName();
-        LOGGER.info("EurekaInstanceCanceledEvent {}", event.getAppName());
+        log.info("EurekaInstanceCanceledEvent {}", event.getAppName());
     }
 
     /**
@@ -28,7 +26,7 @@ public class EurekaListener {
     public void listen(EurekaInstanceRegisteredEvent event) {
         event.getInstanceInfo();
         event.getLeaseDuration();
-        LOGGER.info("EurekaInstanceRegisteredEvent {}", event.getInstanceInfo());
+        log.info("EurekaInstanceRegisteredEvent {}", event.getInstanceInfo());
     }
 
     /**
@@ -39,7 +37,7 @@ public class EurekaListener {
         event.getServerId();
         event.getAppName();
         event.getInstanceInfo();
-        LOGGER.info("EurekaInstanceRegisteredEvent {}", event.getAppName());
+        log.info("EurekaInstanceRegisteredEvent {}", event.getAppName());
     }
 
     /**
@@ -47,7 +45,7 @@ public class EurekaListener {
      */
     @EventListener
     public void listen(EurekaRegistryAvailableEvent event) {
-        LOGGER.info("EurekaInstanceRegisteredEvent {}", event.getSource());
+        log.info("EurekaInstanceRegisteredEvent {}", event.getSource());
     }
 
     /**
@@ -55,6 +53,6 @@ public class EurekaListener {
      */
     @EventListener
     public void listen(EurekaServerStartedEvent event) {
-        LOGGER.info("EurekaInstanceRegisteredEvent {}", event.getSource());
+        log.info("EurekaInstanceRegisteredEvent {}", event.getSource());
     }
 }
