@@ -9,7 +9,7 @@ spring:
   application:
     name: study-springcloud-eureka
 #########################
-#（★）Eureka Server
+#（★）Eureka Server/
 #########################
 eureka:
   #（▲）实例配置
