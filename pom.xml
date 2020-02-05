@@ -120,6 +120,7 @@
                                     <serverId>server_8</serverId>
                                     <fromFile>target/study-springcloud-eureka-1.0.jar</fromFile>
                                     <url>scp://114.67.102.8/app/study-springcloud-eureka</url>
+                                    <displayCommandOutputs>true</displayCommandOutputs>
                                     <commands>
                                         <command>
                                             <![CDATA[cd /app/study-springcloud-eureka; rm -rf study-springcloud-eureka-1.0.jar]]>
@@ -127,7 +128,6 @@
                                         <command><![CDATA[sh /app/study-springcloud-euraka/server.sh stop]]></command>
                                         <command><![CDATA[sh /app/study-springcloud-euraka/server.sh start]]></command>
                                     </commands>
-                                    <displayCommandOutputs>true</displayCommandOutputs>
                                 </configuration>
                             </execution>
                         </executions>
