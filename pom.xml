@@ -119,7 +119,7 @@
                                 <configuration>
                                     <serverId>server_8</serverId>
                                     <fromFile>target/study-springcloud-eureka-1.0.jar</fromFile>
-                                    <url>scp://114.67.102.8/app/study-springcloud-eureka</url>
+                                    <url>scp://root@114.67.102.8/app/study-springcloud-eureka</url>
                                     <displayCommandOutputs>true</displayCommandOutputs>
                                     <commands>
                                         <command>
