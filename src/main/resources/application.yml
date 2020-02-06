@@ -10,9 +10,9 @@ spring:
     name: study-springcloud-eureka
   main:
     web-application-type: servlet
-#====================
+#==============================
 #（★）Eureka Server
-#====================
+#==============================
 eureka:
   #（▲）实例配置
   instance:
