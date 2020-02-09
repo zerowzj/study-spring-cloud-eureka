@@ -88,6 +88,31 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <!-- ==================== -->
+            <!-- 装配                 -->
+            <!-- ==================== -->
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-assembly-plugin</artifactId>-->
+            <!--                <version>3.1.0</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>make-assembly</id>-->
+            <!--                        <phase>package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>single</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--                <configuration>-->
+            <!--                    <encoding>UTF-8</encoding>-->
+            <!--                    <skipAssembly>false</skipAssembly>-->
+            <!--                    <appendAssemblyId>false</appendAssemblyId>-->
+            <!--                    <descriptors>-->
+            <!--                        <descriptor>src/main/assembly/assembly.xml</descriptor>-->
+            <!--                    </descriptors>-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
         </plugins>
     </build>
 
@@ -102,7 +127,9 @@
             </activation>
             <build>
                 <plugins>
-                    <!-- 自动部署 -->
+                    <!-- ==================== -->
+                    <!-- 自动部署              -->
+                    <!-- ==================== -->
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>wagon-maven-plugin</artifactId>
@@ -142,7 +169,9 @@
             </properties>
             <build>
                 <plugins>
-                    <!-- docker镜像 -->
+                    <!-- ==================== -->
+                    <!-- docker镜像           -->
+                    <!-- ==================== -->
                     <plugin>
                         <groupId>com.spotify</groupId>
                         <artifactId>dockerfile-maven-plugin</artifactId>
