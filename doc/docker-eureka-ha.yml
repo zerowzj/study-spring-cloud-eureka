@@ -6,7 +6,7 @@ services:
     ports:
       - 7101:7100
     environment:
-      #- eureka.instance.hostname=eureka-server1
+      #- eureka.··    .hostname=eureka-server1
       - EUREKA_SERVER_LIST=http://114.67.102.8:7102/eureka/
     volumes:
       - /xdfapp:/xdfapp
