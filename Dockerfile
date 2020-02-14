@@ -11,4 +11,4 @@ RUN echo 'Asia/Shanghai' >/etc/timezone
 #
 ENTRYPOINT ["java","-Djava.security. =file:/dev/./urandom","-jar","/app.jar"]
 #
-#EXPOSE 7010
+#EXPOSE 7100
