@@ -10,44 +10,6 @@ spring:
     name: study-springcloud-eureka
   main:
     web-application-type: servlet
-#==============================
-#（★）Eureka Server
-#==============================
-eureka:
-  #（▲）实例配置
-  instance:
-    #hostname: ${spring.cloud.client.ip-address}:${server.port}
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-    prefer-ip-address: true
-    lease-renewal-interval-in-seconds: 30
-    lease-expiration-duration-in-seconds: 5
-  #（▲）客户端配置
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url:
-      defaultZone: @eureka.server.list@
-  #（▲）服务端配置
-  server:
-    #是否启用自我保护机制，默认为true
-    enable-self-preservation: false
-    #清除无效服务实例的时间间隔，默认60000毫秒
-    eviction-interval-timer-in-ms: 60000
-    #更新续约阈值的间隔，默认15*60*1000毫秒
-    renewal-threshold-update-interval-ms: 10000
-    #15分钟内续约服务的比例小于0.85，则开启自我保护机制，在此期间不会清除已注册的任何服务（即便是无效服务）
-    renewal-percent-threshold: 0.85
-    #希望客户端续约时间间隔，默认30秒
-    expected-client-renewal-interval-seconds: 30
-    #（▲）集群配置
-    #复制数据请求时，数据是否压缩，默认false
-    enable-replicated-request-compression: false
-    #节点之间数据复制时，可重试次数，默认5次
-    number-of-replication-retries: 5
-    #（▲）自定义工具配置
-    #Json编解码器名称
-    #json-codec-name:
-    #属性解析器名称
-    #property-resolver:
-    #Xml编解码器名称
-    #xml-codec-name:
+    banner-mode: 'console'
+  profiles:
+    active: eureka
