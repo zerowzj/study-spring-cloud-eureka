@@ -8,10 +8,10 @@ RUN echo 'Asia/Shanghai' >/etc/timezone
 
 #
 ARG JAR_FILE
-ADD ${JAR_FILE} app.jar
-ADD ${JAR_FILE} /xdfapp/app.jar
+ADD ${JAR_FILE} /app/app.jar
 #
-ENTRYPOINT ["java","-jar", "/app.jar"]
+WORKDIR /app
+ENTRYPOINT ["java","-jar", "app.jar"]
 #ENTRYPOINT ["java","-jar","app.jar"]
 #
 #EXPOSE 7100
