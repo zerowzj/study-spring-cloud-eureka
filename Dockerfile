@@ -5,17 +5,20 @@ LABEL maintainer="wangzhj<zerowzj@163.com>" app="eureka"
 #设置时区
 ADD Shanghai /etc/localtime
 RUN echo 'Asia/Shanghai' >/etc/timezone
-
-#
+#变量
 ARG JAR_FILE
+ARG TAR_FILE
+ENV APP_DIR=/app
+ENV PROJECT_NAME=study-springcloud-eureka
+#
 ADD ${JAR_FILE} /app/app.jar
 
-ARG TAG_FILE
-ADD ${TAR_FILE} /app
-RUN tar -xvzf /app/${TAG_FILE}
 #
-WORKDIR /app
+ADD ${TAR_FILE} /${APP_DIR}
+RUN tar -zcvf /${APP_DIR}/${TAR_FILE} /${APP_DIR}
+#
+WORKDIR /${APP_DIR}/bin
+ENTRYPOINT ["/bin/sh", "server.sh", "start"]
 ENTRYPOINT ["java","-jar", "app.jar"]
-#ENTRYPOINT ["java","-jar","app.jar"]
 #
 #EXPOSE 7100
