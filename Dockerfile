@@ -11,7 +11,8 @@ ARG JAR_FILE
 ADD ${JAR_FILE} /app/app.jar
 
 ARG TAG_FILE
-ADD ${TAR_FILE} /app/study-springcloud-eureka-1.0.tar.gz
+ADD ${TAR_FILE} /app
+RUN tar -xvzf /app/${TAG_FILE}
 #
 WORKDIR /app
 ENTRYPOINT ["java","-jar", "app.jar"]
