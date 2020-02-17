@@ -8,17 +8,17 @@ RUN echo 'Asia/Shanghai' >/etc/timezone
 #变量
 ARG JAR_FILE
 ARG TAR_FILE
-ENV APP_DIR=/app
 ENV PROJECT_NAME=study-springcloud-eureka
+ENV DEPLOY_DIR=/app
 #
 ADD ${JAR_FILE} /app/app.jar
 
 #
-ADD ${TAR_FILE} /${APP_DIR}
-RUN tar -zcvf /${APP_DIR}/${TAR_FILE} /${APP_DIR}
+ADD ${TAR_FILE} /${DEPLOY_DIR}
+RUN tar -zcvf /${DEPLOY_DIR}/${TAR_FILE} /${DEPLOY_DIR}
 #
-WORKDIR /${APP_DIR}/bin
+WORKDIR /${DEPLOY_DIR}/bin
 ENTRYPOINT ["/bin/sh", "server.sh", "start"]
-ENTRYPOINT ["java","-jar", "app.jar"]
+#ENTRYPOINT ["java","-jar", "app.jar"]
 #
 #EXPOSE 7100

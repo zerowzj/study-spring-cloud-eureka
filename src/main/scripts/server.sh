@@ -6,8 +6,19 @@ cd `dirname $0`
 cd ..
 #
 PROJECT_NAME=study-springcloud-eureka
-JAR_FILE=/app/study-springcloud-eureka/study-springcloud-eureka-1.0.jar
-LOG_FILE=/app/study-springcloud-eureka/stdout.log
+JAR_FILE=study-springcloud-eureka-1.0.jar
+#部署目录
+DEPLOY_HOME=`pwd`
+#bin目录
+BIN_DIR=$DEPLOY_HOME/bin
+#lib目录
+LIB_DIR=$DEPLOY_HOME/lib
+#日志目录
+LOG_DIR=/app/logs/$PROJECT_NAME
+#标准输出文件
+STDOUT_FILE=$LOG_DIR/stdout.log
+#GC日志文件
+GC_LOG_FILE=$LOG_DIR/gc.log
 
 JAVA_MEM_OPTS=" -server -Xms512M -Xmx512M -Xmn128M -Xss128M -XX:MetaspaceSize=128M -XX:MaxMetaspaceSize=512M"
 JAVA_GC_OPTS=" -XX:PrintGC -XX:PrintGCDetails -XX:PrintGCTime"
@@ -24,7 +35,7 @@ get_pid() {
 start() {
   pid=$(get_pid)
   if [ -z "$pid" ]; then
-    nohup java $JAVA_OPTS -jar $JAR_FILE >$LOG_FILE 2>&1 &
+    nohup java $JAVA_OPTS -jar $LIB_DIR/$JAR_FILE >$STDOUT_FILE 2>&1 &
   fi
 }
 stop() {
