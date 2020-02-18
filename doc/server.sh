@@ -25,13 +25,18 @@ JAVA_OPTS=$JAVA_MEM_OPTS
 #export JAVA_HOME
 #export PATH=$PATH:$JAVA_HOME/bin
 
-pid=$(ps -ef | grep $JAR_FILE | grep -v grep | awk '{ print $2 }')
+get_pid() {
+  pid=$(ps -ef | grep $JAR_FILE | grep -v grep | awk '{ print $2 }')
+  echo "$pid"
+}
 start() {
+  pid=$(get_pid)
   if [ -z "$pid" ]; then
-    nohup java $JAVA_OPTS -jar $LIB_DIR/$JAR_FILE
+    nohup java $JAVA_OPTS -jar $LIB_DIR/$JAR_FILE >$STDOUT_FILE 2>&1 &
   fi
 }
 stop() {
+  pid=$(get_pid)
   if [ -n "$pid" ]; then
     kill -9 $pid
   fi
