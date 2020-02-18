@@ -3,7 +3,7 @@
 export BUILD_ID=dontkillme
 #当前目录
 cd $(dirname $0)
-$(cd ..)
+cd ..
 #常量
 PROJECT_NAME=study-springcloud-eureka
 JAR_FILE=study-springcloud-eureka-1.0.jar
@@ -31,7 +31,7 @@ get_pid() {
 start() {
   pid=$(get_pid)
   if [ -z "$pid" ]; then
-    java $JAVA_OPTS -jar $LIB_DIR/$JAR_FILE
+    java $JAVA_OPTS -jar $LIB_DIR/$JAR_FILE >$STDOUT_FILE
   fi
 }
 stop() {
