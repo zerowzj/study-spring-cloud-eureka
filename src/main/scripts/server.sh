@@ -1,25 +1,22 @@
 #!/bin/bash
-#解决Jenkins在构建完成后使用processTreeKiller杀掉了所有子进程的问题
+#（▲）解决Jenkins在构建完成后使用processTreeKiller杀掉了所有子进程的问题
 export BUILD_ID=dontkillme
 #
-cd `dirname $0`
+cd $(dirname $0)
 cd ..
-#
+#常量
 PROJECT_NAME=study-springcloud-eureka
 JAR_FILE=study-springcloud-eureka-1.0.jar
-#部署目录
-DEPLOY_HOME=`pwd`
-#bin目录
-BIN_DIR=$DEPLOY_HOME/bin
-#lib目录
+#部署
+DEPLOY_HOME=$(pwd)
 LIB_DIR=$DEPLOY_HOME/lib
-#日志目录
+BIN_DIR=$DEPLOY_HOME/bin
+#日志
 LOG_DIR=/app/logs/$PROJECT_NAME
-#标准输出文件
 STDOUT_FILE=$LOG_DIR/stdout.log
-#GC日志文件
 GC_LOG_FILE=$LOG_DIR/gc.log
 
+#
 JAVA_MEM_OPTS=" -server -Xms512M -Xmx512M -Xmn128M -Xss128M -XX:MetaspaceSize=128M -XX:MaxMetaspaceSize=512M"
 JAVA_GC_OPTS=" -XX:PrintGC -XX:PrintGCDetails -XX:PrintGCTime"
 #JAVA_OPTS=$JAVA_MEM_OPTS $JAVA_GC_OPTS
