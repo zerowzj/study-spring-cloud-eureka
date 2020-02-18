@@ -1,9 +1,9 @@
 #!/bin/bash
 #（▲）解决Jenkins在构建完成后使用processTreeKiller杀掉了所有子进程的问题
 export BUILD_ID=dontkillme
-#
+#当前目录
 cd $(dirname $0)
-cd ..
+$(cd ..)
 #常量
 PROJECT_NAME=study-springcloud-eureka
 JAR_FILE=study-springcloud-eureka-1.0.jar
