@@ -12,5 +12,5 @@ spring:
     web-application-type: servlet
     banner-mode: 'console'
   profiles:
-    active: docker
 #    active: eureka
+    active: docker
