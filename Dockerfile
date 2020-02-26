@@ -13,4 +13,5 @@ ENV DEPLOY_DIR=/app \
 ADD ${TAR_FILE} ${DEPLOY_DIR}
 #
 WORKDIR ${DEPLOY_DIR}
+
 ENTRYPOINT ["java", "-jar", "${JAR_NAME}"]
