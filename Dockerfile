@@ -7,14 +7,10 @@ ADD Shanghai /etc/localtime
 RUN echo 'Asia/Shanghai' >/etc/timezone
 #变量
 ARG TAR_FILE
-ENV PROJECT_NAME=study-springcloud-eureka
-ENV DEPLOY_DIR=/app
+ENV DEPLOY_DIR=/app \
+    JAR_NAME=study-springcloud-eureka-1.0.jar
 #
 ADD ${TAR_FILE} ${DEPLOY_DIR}
-#RUN tar -cvf /app/study-springcloud-eureka-1.0.tar.gz
 #
-WORKDIR ${DEPLOY_DIR}/${PROJECT_NAME}/lib
-ENTRYPOINT ["java", "-jar", "study-springcloud-eureka-1.0.jar"]
-#ENTRYPOINT ["/bin/sh", "server.sh", "start"]
-#
-#EXPOSE 7100
+WORKDIR ${DEPLOY_DIR}
+ENTRYPOINT ["java", "-jar", "${JAR_NAME}"]
