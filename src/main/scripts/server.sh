@@ -31,7 +31,8 @@ get_pid() {
 start() {
   pid=$(get_pid)
   if [ -z "$pid" ]; then
-    java $JAVA_OPTS -jar $LIB_DIR/$JAR_FILE >$STDOUT_FILE
+    java $JAVA_OPTS -jar $LIB_DIR/$JAR_FILE >$STDOUT_FILE 2>&1 &
+
   fi
 }
 stop() {
