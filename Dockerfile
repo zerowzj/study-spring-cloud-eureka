@@ -6,12 +6,12 @@ LABEL maintainer="wangzhj<zerowzj@163.com>" app="study-springcloud-eureka"
 ADD Shanghai /etc/localtime
 RUN echo 'Asia/Shanghai' >/etc/timezone
 #
-ARG TAR_FILE
+ARG JAR_FILE
 ENV DEPLOY_DIR=/app \
     JAR_NAME=study-springcloud-eureka-1.0.jar
 #
-ADD ${TAR_FILE} ${DEPLOY_DIR}
+RUN mkdir ${DEPLOY_DIR}
+ADD ${JAR_FILE} ${DEPLOY_DIR}
 #
 WORKDIR ${DEPLOY_DIR}
-
-ENTRYPOINT ["java", "-jar", "${JAR_NAME}"]
+ENTRYPOINT ["java", "-jar", "study-springcloud-eureka-1.0.jar"]

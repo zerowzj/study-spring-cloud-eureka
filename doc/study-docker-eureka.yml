@@ -6,7 +6,7 @@ services:
     ports:
       - "7101:7101"
     environment:
-      - PORT=7101
+      - SERVER_PORT=7101
       #- eureka.instance.hostname=eureka-server1
       - EUREKA_SERVER_LIST=http://114.67.102.8:7102/eureka/
     volumes:
@@ -19,7 +19,7 @@ services:
     ports:
       - "7102:7102"
     environment:
-      - PORT=7102
+      - SERVER_PORT=7102
       #- eureka.instance.hostname=eureka-server2
       - EUREKA_SERVER_LIST=http://114.67.102.8:7101/eureka/
     volumes:
