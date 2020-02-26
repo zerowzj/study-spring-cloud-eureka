@@ -1,6 +1,6 @@
 #
 spring:
-  profiles: sss
+  profiles: eureka-server1
 server:
   port: 7101
 eureka:
@@ -15,7 +15,7 @@ eureka:
       defaultZone: http://eureka-server2:7102/euraka
 ---
 spring:
-  profiles: aaa
+  profiles: eureka-server2
 server:
   port: 7102
 eureka:

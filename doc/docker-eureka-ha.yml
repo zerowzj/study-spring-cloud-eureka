@@ -3,28 +3,24 @@ services:
   study-springcloud-eureka1:
     image: study/study-springcloud-eureka:1
     restart: always
+    hostname: eureka-server1
     ports:
       - "7101:7101"
-    environment:
-      #- eureka.··    .hostname=eureka-server1
-      - EUREKA_SERVER_LIST=http://114.67.102.8:7102/eureka/
     volumes:
       - /xdfapp:/xdfapp
     networks:
-      - demo_net
+      - study_net
   study-springcloud-eureka2:
     image: study/study-springcloud-eureka:1
     restart: always
+    hostname: eureka-server2
     ports:
       - "7102:7102"
-    environment:
-      #- eureka.instance.hostname=eureka-server2
-      - EUREKA_SERVER_LIST=http://114.67.102.8:7101/eureka/
     volumes:
       - /xdfapp:/xdfapp
     networks:
-      - demo_net
+      - study_net
 
 networks:
-  demo_net:
+  study_net:
     external: true
