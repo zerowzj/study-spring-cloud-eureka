@@ -64,6 +64,9 @@
                 <version>3.0.0</version>
             </extension>
         </extensions>
+        <filters>
+            <filter>src/main/filters/${env}.properties</filter>
+        </filters>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
