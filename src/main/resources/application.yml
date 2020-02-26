@@ -1,4 +1,7 @@
 #
+server:
+  port: @server.port@
+#
 logging:
   config: classpath:logback.xml
 #
@@ -9,5 +12,4 @@ spring:
     web-application-type: servlet
     banner-mode: 'console'
   profiles:
-#    active: eureka
-    active: eureka-ha
+    active: eureka
