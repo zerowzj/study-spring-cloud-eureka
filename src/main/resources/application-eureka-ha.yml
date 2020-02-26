@@ -1,0 +1,30 @@
+#
+spring:
+  profiles: sss
+server:
+  port: 7101
+eureka:
+  instance:
+    hostname: eureka-server1
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-server2:7102/euraka
+---
+spring:
+  profiles: aaa
+server:
+  port: 7102
+eureka:
+  instance:
+    hostname: eureka-server2
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-server1:7101/euraka

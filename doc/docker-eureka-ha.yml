@@ -4,7 +4,7 @@ services:
     image: study/study-springcloud-eureka:1
     restart: always
     ports:
-      - "7101:7100"
+      - "7101:7101"
     environment:
       #- eureka.··    .hostname=eureka-server1
       - EUREKA_SERVER_LIST=http://114.67.102.8:7102/eureka/
@@ -16,7 +16,7 @@ services:
     image: study/study-springcloud-eureka:1
     restart: always
     ports:
-      - "7102:7100"
+      - "7102:7102"
     environment:
       #- eureka.instance.hostname=eureka-server2
       - EUREKA_SERVER_LIST=http://114.67.102.8:7101/eureka/

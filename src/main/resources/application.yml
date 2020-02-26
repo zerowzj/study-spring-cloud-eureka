@@ -1,6 +1,4 @@
-#
-server:
-  port: 7100
+
 #
 logging:
   config: classpath:logback.xml
@@ -13,4 +11,4 @@ spring:
     banner-mode: 'console'
   profiles:
 #    active: eureka
-    active: docker
+    active: eureka-ha
