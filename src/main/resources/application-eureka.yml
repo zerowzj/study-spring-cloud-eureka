@@ -15,8 +15,8 @@ eureka:
   #（▲）客户端配置
   #====================
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: @eureka.server.list@
   #====================
