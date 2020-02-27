@@ -11,9 +11,9 @@ spring:
   main:
     web-application-type: servlet
     banner-mode: console
-  #==========
-  #
-  #==========
+  #====================
+  #（▲）Http Basic认证
+  #====================
   security:
     user:
       name: wzj
