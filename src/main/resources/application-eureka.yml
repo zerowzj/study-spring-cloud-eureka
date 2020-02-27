@@ -6,7 +6,7 @@ eureka:
   #（▲）实例配置
   #====================
   instance:
-    hostname: @eureka.host.name@
+    #hostname: @eureka.host.name@
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
   #====================
