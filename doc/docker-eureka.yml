@@ -14,6 +14,7 @@ services:
       - /xdfapp:/xdfapp
     networks:
       - study_net
+
   eureka-server2:
     image: study/study-springcloud-eureka:1
     restart: always
@@ -28,6 +29,7 @@ services:
       - /xdfapp:/xdfapp
     networks:
       - study_net
+
 networks:
   study_net:
     external: true
