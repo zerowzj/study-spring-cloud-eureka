@@ -13,7 +13,7 @@ services:
     volumes:
       - /xdfapp:/xdfapp
     networks:
-      - study_net
+      - bridge_net
 
   eureka-server2:
     image: study/study-springcloud-eureka:1
@@ -28,9 +28,10 @@ services:
     volumes:
       - /xdfapp:/xdfapp
     networks:
-      - study_net
+      - bridge_net
 
 networks:
   study_net:
+    external: true
+  bridge_net:
     driver: bridge
-    #external: true

@@ -2,16 +2,12 @@
 #（★）Eureka Server
 #******************************
 eureka:
-  #====================
   #（▲）实例配置
-  #====================
   instance:
     hostname: @eureka.host.name@
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
-  #====================
   #（▲）客户端配置
-  #====================
   client:
     register-with-eureka: true
     fetch-registry: false
@@ -24,10 +20,10 @@ eureka:
     #--------------------
     #（▲）
     #--------------------
-    #<✔>清除无效服务实例的时间间隔，默认60000毫秒
-    eviction-interval-timer-in-ms: 60000
     #<✔>是否启用自我保护机制，默认为true
     enable-self-preservation: false
+    #<✔>清除无效服务实例的时间间隔，默认60000毫秒
+    eviction-interval-timer-in-ms: 60000
     #
     wait-time-in-ms-when-sync-empty: 0
     #--------------------
