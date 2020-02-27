@@ -10,7 +10,7 @@ eureka:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
   #====================
-  #（）客户端配置
+  #（▲）客户端配置
   #====================
   client:
     register-with-eureka: true
@@ -21,29 +21,51 @@ eureka:
   #（▲）服务端配置
   #====================
   server:
-    #（✔）是否启用自我保护机制，默认为true
+    #<✔>是否启用自我保护机制，默认为true
     enable-self-preservation: false
     #
-    wait-time-in-ms-when-sync-empty: 30000000
-    #（✔）清除无效服务实例的时间间隔，默认60000毫秒
+    wait-time-in-ms-when-sync-empty: 0
+    #--------------------
+    #（▲）响应缓存
+    #--------------------
+    use-read-only-response-cache: false
+    response-cache-auto-expiration-in-seconds: 180
+    response-cache-update-interval-ms: 0
+    initial-capacity-of-response-cache: 1000
+    #--------------------
+    #（▲）剔除
+    #--------------------
+    #<✔>清除无效服务实例的时间间隔，默认60000毫秒
     eviction-interval-timer-in-ms: 60000
+    #--------------------
     #（▲）续约
-    #（✔）更新续约阈值的间隔，默认15*60*1000毫秒
+    #--------------------
+    #<✔>更新续约阈值的间隔，默认15*60*1000毫秒
     renewal-threshold-update-interval-ms: 10000
     #15分钟内续约服务的比例小于0.85，则开启自我保护机制，在此期间不会清除已注册的任何服务（即便是无效服务）
     renewal-percent-threshold: 0.85
     #希望客户端续约时间间隔，默认30秒
     expected-client-renewal-interval-seconds: 30
-    #（▲）集群
+    #--------------------
+    #（▲）集群复制
+    #--------------------
     #复制数据请求时，数据是否压缩，默认false
     enable-replicated-request-compression: false
     #节点之间数据复制时，可重试次数，默认5次
     number-of-replication-retries: 5
+    #--------------------
+    #（▲）
+    #--------------------
+    peer-node-connect-timeout-ms: 1
+    peer-node-read-timeout-ms: 200
+    #--------------------
     #（▲）自定义工具配置
+    #--------------------
     #Json编解码器名称
     #json-codec-name:
     #属性解析器名称
     #property-resolver:
     #Xml编解码器名称
     #xml-codec-name:
+
 
