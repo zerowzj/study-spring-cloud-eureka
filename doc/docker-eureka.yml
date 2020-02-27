@@ -28,7 +28,6 @@ services:
       - /xdfapp:/xdfapp
     networks:
       - study_net
-
 networks:
   study_net:
     external: true
