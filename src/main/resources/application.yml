@@ -11,6 +11,13 @@ spring:
   main:
     web-application-type: servlet
     banner-mode: console
+  #==========
+  #
+  #==========
+  security:
+    user:
+      name: wzj
+      password: 123
   #
   profiles:
     active: eureka
