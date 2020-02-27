@@ -11,15 +11,6 @@ spring:
   main:
     web-application-type: servlet
     banner-mode: "console"
-  #====================
-  #（▲）Basic认证
-  #====================
-  security:
-    basic:
-      enabled: false
-    user:
-      name: wzj
-      password: 123
   #
   profiles:
     active: eureka
