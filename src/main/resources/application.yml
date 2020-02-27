@@ -10,7 +10,7 @@ spring:
     name: study-springcloud-eureka
   main:
     web-application-type: servlet
-    banner-mode: "console"
+    banner-mode: console
   #
   profiles:
     active: eureka
