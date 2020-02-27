@@ -6,7 +6,7 @@ eureka:
   #（▲）实例配置
   #====================
   instance:
-    hostname: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: @eureka.host.name@
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 30
@@ -15,8 +15,8 @@ eureka:
   #（）客户端配置
   #====================
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: @eureka.server.list@
   #====================

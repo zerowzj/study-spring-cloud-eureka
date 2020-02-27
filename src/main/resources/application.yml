@@ -16,7 +16,7 @@ spring:
   #====================
   security:
     basic:
-      enabled: true
+      enabled: false
     user:
       name: wzj
       password: 123
