@@ -1,34 +1,38 @@
-version: '3.6'
+version: '3'
 services:
   eureka-server1:
     image: study/study-springcloud-eureka:1
+    container_name: eureka-server1
     restart: always
     hostname: eureka-server1
     ports:
       - "7101:7101"
     environment:
+      - eureka.instance.hostname=eureka-server1
       - SERVER_PORT=7101
       - EUREKA_HOST_NAME=eureka-server1
       - EUREKA_SERVER_LIST=http://eureka-server2:7102/eureka/
     volumes:
       - /xdfapp:/xdfapp
     networks:
-      - bridge_net
+      - study_net
 
   eureka-server2:
     image: study/study-springcloud-eureka:1
+    container_name: eureka-server2
     restart: always
     hostname: eureka-server2
     ports:
       - "7102:7102"
     environment:
+      - eureka.instance.hostname=eureka-server2
       - SERVER_PORT=7102
       - EUREKA_HOST_NAME=eureka-server2
       - EUREKA_SERVER_LIST=http://eureka-server1:7101/eureka/
     volumes:
       - /xdfapp:/xdfapp
     networks:
-      - bridge_net
+      - study_net
 
 networks:
   study_net:
