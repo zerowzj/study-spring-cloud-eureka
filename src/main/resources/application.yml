@@ -20,5 +20,6 @@ spring:
     user:
       name: wzj
       password: 123
+  #
   profiles:
     active: eureka
