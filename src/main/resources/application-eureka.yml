@@ -12,14 +12,6 @@ eureka:
     lease-renewal-interval-in-seconds: 30
     lease-expiration-duration-in-seconds: 5
   #====================
-  #（▲）客户端配置
-  #====================
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: @eureka.server.list@
-  #====================
   #（▲）服务端配置
   #====================
   server:
@@ -47,3 +39,11 @@ eureka:
     #property-resolver:
     #Xml编解码器名称
     #xml-codec-name:
+  #====================
+  #（▲）客户端配置
+  #====================
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: @eureka.server.list@
