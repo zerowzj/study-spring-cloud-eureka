@@ -47,6 +47,13 @@
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
             <version>1.4.7.RELEASE</version>
         </dependency>
+        <!-- ============================== -->
+        <!--（★）安全                       -->
+        <!-- ============================== -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
