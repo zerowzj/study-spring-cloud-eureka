@@ -6,7 +6,7 @@ eureka:
   #（▲）实例配置
   #====================
   instance:
-    #hostname: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}:${server.port}
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 30
@@ -25,6 +25,8 @@ eureka:
   server:
     #是否启用自我保护机制，默认为true
     enable-self-preservation: false
+    #
+    wait-time-in-ms-when-sync-empty: 0
     #清除无效服务实例的时间间隔，默认60000毫秒
     eviction-interval-timer-in-ms: 60000
     #更新续约阈值的间隔，默认15*60*1000毫秒
