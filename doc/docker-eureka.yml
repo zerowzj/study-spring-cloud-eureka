@@ -32,4 +32,5 @@ services:
 
 networks:
   study_net:
-    external: true
+    driver: bridge
+    #external: true
