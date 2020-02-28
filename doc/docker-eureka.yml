@@ -32,7 +32,6 @@ services:
       - eureka-server1:172.17.0.1
     networks:
       - overlay_net
-
 networks:
   overlay_net:
     external: true
