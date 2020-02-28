@@ -1,5 +1,6 @@
 version: '3.6'
 services:
+  #
   eureka-server1:
     image: study/study-springcloud-eureka:1
     hostname: eureka-server1
@@ -15,6 +16,7 @@ services:
       - eureka-server2:172.17.0.1
     networks:
       - overlay_net
+  #
   eureka-server2:
     image: study/study-springcloud-eureka:1
     hostname: eureka-server2
