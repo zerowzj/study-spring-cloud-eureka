@@ -1,6 +1,6 @@
 #
 server:
-  port: 7101
+  port: @server.port@
 #
 logging:
   config: classpath:logback.xml

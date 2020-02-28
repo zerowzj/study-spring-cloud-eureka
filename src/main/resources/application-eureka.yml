@@ -5,12 +5,12 @@ eureka:
   #（▲）实例配置
   instance:
     hostname: @eureka.host.name@
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-    prefer-ip-address: false
+    instance-id: ${eureka.instance.hostname}:${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
   #（▲）客户端配置
   client:
     register-with-eureka: true
-    fetch-registry: false
+    fetch-registry: true
     service-url:
       defaultZone: @eureka.server.list@
   #====================
@@ -50,7 +50,7 @@ eureka:
     #节点之间数据复制时，可重试次数，默认5次
     number-of-replication-retries: 5
     #--------------------
-    #（▲）
+    #（▲）集群连接
     #--------------------
     peer-node-connect-timeout-ms: 1
     peer-node-read-timeout-ms: 200
