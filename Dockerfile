@@ -15,3 +15,5 @@ ADD ${JAR_FILE} ${DEPLOY_DIR}
 #
 WORKDIR ${DEPLOY_DIR}
 ENTRYPOINT ["java", "-jar", "study-springcloud-eureka-1.0.jar"]
+
+EXPOSE 7101
