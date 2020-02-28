@@ -36,5 +36,3 @@ services:
 networks:
   overlay_net:
     external: true
-  bridge_net:
-    driver: bridge

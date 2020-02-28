@@ -1,0 +1,10 @@
+#忽略目录
+doc
+src
+
+#忽略文件
+*.iml
+
+#忽略目录，排除例外
+target
+!target/study-springcloud-eureka-1.0.jar
