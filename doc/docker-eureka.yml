@@ -6,30 +6,30 @@ services:
     #hostname: eureka-server1
     ports:
       - "7101:7101"
-    environment:
-      - SERVER_PORT=7101
-      - EUREKA_HOST_NAME=eureka-server1
-      - EUREKA_SERVER_LIST=http://eureka-server2:7101/eureka/
     volumes:
       - /xdfapp:/xdfapp
 #    extra_hosts:
 #      - eureka-server2:172.17.0.1
     networks:
       - overlay_net
+    environment:
+      - SERVER_PORT=7101
+      - EUREKA_HOST_NAME=eureka-server1
+      - EUREKA_SERVER_LIST=http://eureka-server2:7101/eureka/
   #
   eureka-server2:
     image: study/study-springcloud-eureka:1
     #hostname: eureka-server2
     ports:
       - "7102:7101"
-    environment:
-      - SERVER_PORT=7102
-      - EUREKA_HOST_NAME=eureka-server2
-      - EUREKA_SERVER_LIST=http://eureka-server1:7101/eureka/
     volumes:
       - /xdfapp:/xdfapp
 #    extra_hosts:
 #      - eureka-server1:172.17.0.1
+    environment:
+      - SERVER_PORT=7102
+      - EUREKA_HOST_NAME=eureka-server2
+      - EUREKA_SERVER_LIST=http://eureka-server1:7101/eureka/
     networks:
       - overlay_net
 networks:

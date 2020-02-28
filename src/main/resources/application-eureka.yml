@@ -6,7 +6,7 @@ eureka:
   instance:
     hostname: @eureka.host.name@
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
-    prefer-ip-address: true
+    prefer-ip-address: false
   #（▲）客户端配置
   client:
     register-with-eureka: true
