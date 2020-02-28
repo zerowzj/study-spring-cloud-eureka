@@ -1,0 +1,31 @@
+version: '3.6'
+services:
+  #
+  eureka-server1:
+    image: study/study-springcloud-eureka:1
+    #hostname: eureka-server1
+    ports:
+      - "7101:7100"
+    volumes:
+      - /xdfapp:/xdfapp
+    networks:
+      - overlay_net
+    environment:
+      - eureka.instance.hostname=eureka-server1
+      - EUREKA_SERVER_LIST=http://eureka-server2:7101/eureka/
+  #
+  eureka-server2:
+    image: study/study-springcloud-eureka:1
+    #hostname: eureka-server2
+    ports:
+      - "7102:7100"
+    volumes:
+      - /xdfapp:/xdfapp
+    networks:
+      - overlay_net
+    environment:
+      - eureka.instance.hostname=eureka-server2
+      - EUREKA_SERVER_LIST=http://eureka-server1:7102/eureka/
+networks:
+  overlay_net:
+    external: true
