@@ -10,10 +10,11 @@ ARG JAR_FILE
 ENV DEPLOY_DIR=/app \
     JAR_NAME=study-springcloud-eureka-1.0.jar
 #
-RUN mkdir ${DEPLOY_DIR}
-ADD ${JAR_FILE} ${DEPLOY_DIR}
+RUN mkdir $DEPLOY_DIR
+ADD $JAR_FILE $DEPLOY_DIR
 #
-WORKDIR ${DEPLOY_DIR}
-ENTRYPOINT ["java", "-jar", "$JAR_NAME"]
+WORKDIR $DEPLOY_DIR
+#ENTRYPOINT ["java", "-jar", "study-springcloud-eureka-1.0.jar"]
+ENTRYPOINT ["sh", "-c", "java -jar $JAR_NAME"]
 
 EXPOSE 7100
