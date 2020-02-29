@@ -14,7 +14,7 @@ services:
       - overlay_net
     environment:
       - SERVER_PORT=7101
-      #- EUREKA_HOST_NAME=eureka-server1
+      - EUREKA_HOST_NAME=eureka-server1
       - EUREKA_SERVER_LIST=http://eureka-server2:7102/eureka/
   #
   eureka-server2:
@@ -30,7 +30,7 @@ services:
       - overlay_net
     environment:
       - SERVER_PORT=7102
-      #- EUREKA_HOST_NAME=eureka-server2
+      - EUREKA_HOST_NAME=eureka-server2
       - EUREKA_SERVER_LIST=http://eureka-server1:7101/eureka/
 networks:
   overlay_net:
