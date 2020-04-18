@@ -1,6 +1,5 @@
 #
 server:
-#  port: 7100
   port: @server.port@
 #
 logging:

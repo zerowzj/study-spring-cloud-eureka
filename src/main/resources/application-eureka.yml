@@ -20,9 +20,9 @@ eureka:
     #--------------------
     #（▲）
     #--------------------
-    #<✔>是否启用自我保护机制，默认为true
+    #<✔>是否启用自我保护机制，默认为true（保护机制）
     enable-self-preservation: false
-    #<✔>清除无效服务实例的时间间隔，默认60000毫秒
+    #<✔>清除无效服务实例的时间间隔，默认60000毫秒（失效剔除）
     eviction-interval-timer-in-ms: 60000
     #
     wait-time-in-ms-when-sync-empty: 0
