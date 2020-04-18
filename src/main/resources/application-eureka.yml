@@ -34,15 +34,14 @@ eureka:
     #希望客户端续约时间间隔，默认30秒
     expected-client-renewal-interval-seconds: 30
 
-
-
-    #
-    wait-time-in-ms-when-sync-empty: 0
     #--------------------
     #（▲）响应缓存
     #--------------------
+    #
     use-read-only-response-cache: false
+    #响应缓存自动过期时间
     response-cache-auto-expiration-in-seconds: 180
+    #响应缓存更新时间间隔
     response-cache-update-interval-ms: 0
     initial-capacity-of-response-cache: 1000
     #--------------------
@@ -52,6 +51,8 @@ eureka:
     enable-replicated-request-compression: false
     #复制重试次数，默认5次
     number-of-replication-retries: 5
+    #server启动时，不能从对等节点获取instance注册信息的情况，应等待多长时间
+    wait-time-in-ms-when-sync-empty: 0
     #--------------------
     #（▲）集群连接
     #--------------------
@@ -68,3 +69,4 @@ eureka:
     #property-resolver:
     #Xml编解码器名称
     #xml-codec-name:
+    delta-retention-timer-interval-in-ms:
