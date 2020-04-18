@@ -1,13 +1,17 @@
 #******************************
-#Eureka Server
+# Eureka Server
 #******************************
 eureka:
+  #====================
   #（★）实例配置
+  #====================
   instance:
     hostname: @eureka.host.name@
     instance-id: ${eureka.instance.hostname}:${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
+  #====================
   #（★）客户端配置
+  #====================
   client:
     register-with-eureka: true
     fetch-registry: true

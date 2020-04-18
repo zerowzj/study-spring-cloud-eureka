@@ -14,15 +14,15 @@
 
 2. 服务续约
 
-   注册完服务之后，服务提供者会维持一个心跳告诉Eureca Server ：“我是一个活着的健康实例”，从而防止Eureca Server的“剔除任务”从服务列表中排除该实例。 
+   注册完服务之后，服务提供者会维持一个心跳告诉Eureca Server ：“我是一个活着的健康实例”，从而防止Eureca Server的“剔除任务”从服务列表中排除该实例。 服务续约的两个重要属性
 
-   服务续约的两个重要属性
-   
    ```properties
-   #服务续约任务的调用间隔时间，默认为30秒
-   eureka.instance.lease-renewal-interval-in-seconds=30
-   #服务失效的时间，默认为90秒。
-   eureka.instance.lease-expiration-duration-in-seconds=90
+   eureka:
+   	instance:
+   		#服务续约任务的调用间隔时间，默认为30秒
+   		lease-renewal-interval-in-seconds: 30
+   		#服务失效的时间，默认为90秒
+   		lease-expiration-duration-in-seconds: 90
    ```
    
    
@@ -34,14 +34,13 @@
    服务消费者启动的时候会发送一个REST请求给注册中心，获取已注册的服务清单。 为了性能考虑，EurecaServer会维护一份只读的服务清单来返回给 客户端，同时该缓存清单会隔三十秒刷新一次。 
 
    ```properties
-   
+   eureka:
+   	client: 
+   		#获取服务，默认为true 
+   		fetch-registry: true
+   		#缓存清单的更新时间，默认三十秒
+   		registry-fetch-interval-seconds: 30
    ```
-
-   
-
-   > eureka.client.fetch-registry：获取服务，默认为true 
-   >
-   > eureka.client.registry-fetch-interval-seconds：缓存清单的更新时间，默认三十秒
 
    
 
@@ -67,6 +66,10 @@
 
 # 二. 机制
 
+## 2.1 心跳机制
+
+​		在应用启动后，节点们将会向Eureka Server发送心跳,默认周期为30秒，如果Eureka Server在多个心跳周期内没有接收到某个节点的心跳，Eureka Server将会从服务注册表中把这个服务节点移除（默认90秒）。
+
 ## 2.1 自我保护机制
 
 ​		默认情况下，如果 Eureka Server 在一定的 90s 内没有接收到某个微服务实例的心跳，会注销该实例。但是在微服务架构下服务之间通常都是跨进程调用，网络通信往往会面临着各种问题，比如微服务状态正常，网络分区故障，导致此实例被注销。
@@ -87,9 +90,7 @@
 
 ​		自我保护模式的设计哲学是：在不确定节点是否可用的情况下，尽可能保留节点。
 
-## 2.1 心跳机制
 
-​		在应用启动后，节点们将会向Eureka Server发送心跳,默认周期为30秒，如果Eureka Server在多个心跳周期内没有接收到某个节点的心跳，Eureka Server将会从服务注册表中把这个服务节点移除（默认90秒）。
 
 
 
