@@ -4,19 +4,41 @@
 
 1. lease-expiration-duration-in-seconds
 
-   ​		表示eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance。
+2. 12321
 
-   - 默认为90秒
+3. 123
 
-   - 如果该值太大，则很可能将流量转发过去的时候，该instance已经不存活了。
-   - 如果该值设置太小了，则instance则很可能因为临时的网络抖动而被摘除掉。
-   - 该值至少应该大于leaseRenewalIntervalInSeconds
+4. 123
 
-2. lease-renewal-interval-in-seconds
+5. 12231
 
-   ​		表示eureka client发送心跳给server端的频率。如果在leaseExpirationDurationInSeconds后，server端没有收到client的心跳，则将摘除该instance。除此之外，如果该instance实现了HealthCheckCallback，并决定让自己unavailable的话，则该instance也不会接收到流量。
+6. 231223
 
-   - 默认30秒
+7. 1231
+
+8. 23
+
+9. 123123
+
+10. 123
+
+11. 132
+
+12. 123
+
+    ​		表示eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance。
+
+    - 默认为90秒
+
+    - 如果该值太大，则很可能将流量转发过去的时候，该instance已经不存活了。
+    - 如果该值设置太小了，则instance则很可能因为临时的网络抖动而被摘除掉。
+    - 该值至少应该大于leaseRenewalIntervalInSeconds
+
+13. lease-renewal-interval-in-seconds
+
+    ​		表示eureka client发送心跳给server端的频率。如果在leaseExpirationDurationInSeconds后，server端没有收到client的心跳，则将摘除该instance。除此之外，如果该instance实现了HealthCheckCallback，并决定让自己unavailable的话，则该instance也不会接收到流量。
+
+    - 默认30秒
 
 
 
