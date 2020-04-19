@@ -90,9 +90,9 @@
 
     <profiles>
         <profile>
-            <id>dev</id>
+            <id>local</id>
             <properties>
-                <env>dev</env>
+                <env>local</env>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -136,9 +136,9 @@
             <!--            </build>-->
         </profile>
         <profile>
-            <id>test</id>
+            <id>docker</id>
             <properties>
-                <env>test</env>
+                <env>docker</env>
             </properties>
             <build>
                 <plugins>
