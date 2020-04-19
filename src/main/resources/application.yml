@@ -12,11 +12,11 @@ spring:
     web-application-type: servlet
     banner-mode: console
   #====================
-  #（▲）Http Basic认证
+  #（▲）HttpBasic认证
   #====================
   security:
     user:
-      name: wzj
+      name: admin
       password: 123
   #
   profiles:
