@@ -1,4 +1,4 @@
-package study.springcloud.eureka.support;
+package study.springcloud.eureka.support.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

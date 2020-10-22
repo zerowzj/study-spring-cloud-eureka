@@ -10,7 +10,7 @@ spring:
     name: study-springcloud-eureka
   main:
     web-application-type: servlet
-    banner-mode: off
+    banner-mode: 'off'
   #（★）HttpBasic认证
   security:
     user:
