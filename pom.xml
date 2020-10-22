@@ -46,7 +46,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
-<!--            <version>1.4.7.RELEASE</version>-->
+            <version>1.4.7.RELEASE</version>
         </dependency>
         <!-- ============================== -->
         <!--（★）安全                       -->

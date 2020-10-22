@@ -1,6 +1,4 @@
-#******************************
-# Eureka Server
-#******************************
+#
 eureka:
   #实例配置
   instance:
@@ -13,18 +11,12 @@ eureka:
       defaultZone: @eureka.server.list@
     register-with-eureka: true
     fetch-registry: true
-  #====================
   #（★）服务端配置
-  #====================
   server:
-    #--------------------
     #（▲）失效剔除
-    #--------------------
     #（无效服务）剔除时间间隔定时器，默认60秒
     eviction-interval-timer-in-ms: 60000
-    #--------------------
     #（▲）保护机制
-    #--------------------
     #是否启用自我保护机制，默认true
     enable-self-preservation: false
     #续约阈值更新间隔，默认15*60*1000毫秒
@@ -33,9 +25,7 @@ eureka:
     renewal-percent-threshold: 0.85
     #希望客户端续约时间间隔，默认30秒
     expected-client-renewal-interval-seconds: 30
-    #--------------------
     #（▲）响应缓存
-    #--------------------
     #
     use-read-only-response-cache: false
     #响应缓存自动过期时间
@@ -43,25 +33,19 @@ eureka:
     #响应缓存更新时间间隔
     response-cache-update-interval-ms: 0
     initial-capacity-of-response-cache: 1000
-    #--------------------
     #（▲）集群复制
-    #--------------------
     #是否开启复制请求压缩，默认false
     enable-replicated-request-compression: false
     #复制重试次数，默认5次
     number-of-replication-retries: 5
     #server启动时，不能从对等节点获取instance注册信息的情况，应等待多长时间
     wait-time-in-ms-when-sync-empty: 0
-    #--------------------
     #（▲）集群连接
-    #--------------------
     #对等节点连接超时时间
     peer-node-connect-timeout-ms: 1
     #对等节点读取超时时间
     peer-node-read-timeout-ms: 200
-    #--------------------
     #（▲）自定义工具配置
-    #--------------------
     #Json编解码器名称
     #json-codec-name:
     #属性解析器名称
