@@ -12,10 +12,10 @@ spring:
     web-application-type: servlet
     banner-mode: 'off'
   #（★）HttpBasic认证
-  security:
-    user:
-      name: admin
-      password: 123
+#  security:
+#    user:
+#      name: admin
+#      password: 123
   #
   profiles:
     active: eureka

@@ -9,8 +9,8 @@ eureka:
   client:
     service-url:
       defaultZone: @eureka.server.list@
-    register-with-eureka: true
-    fetch-registry: true
+    register-with-eureka: false
+    fetch-registry: false
   #（★）服务端配置
   server:
     #（▲）失效剔除
