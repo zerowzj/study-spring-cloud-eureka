@@ -23,7 +23,8 @@ eureka:
     #（▲）续约
     #续约阈值更新间隔，默认15*60*1000毫秒
     renewal-threshold-update-interval-ms: 10000
-    #续约阈值百分比，15分钟内的比例小于0.85，则开启自我保护机制，在此期间不会清除已注册的任何服务（即便是无效服务）
+    #续约阈值百分比，15分钟内的比例小于0.85，则开启自我保护机制
+    #在此期间不会清除已注册的任何服务（即便是无效服务）
     renewal-percent-threshold: 0.85
     #希望客户端续约时间间隔，默认30秒
     expected-client-renewal-interval-seconds: 30
