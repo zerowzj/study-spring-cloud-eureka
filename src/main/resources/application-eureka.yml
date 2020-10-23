@@ -16,7 +16,7 @@ eureka:
   server:
     #（▲）失效剔除
     #（无效服务）剔除时间间隔，默认60秒
-    eviction-interval-timer-in-ms: 60000
+    eviction-interval-timer-in-ms: 5000
     #（▲）保护机制
     #是否启用自我保护机制，默认true
     enable-self-preservation: false
