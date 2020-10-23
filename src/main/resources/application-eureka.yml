@@ -14,18 +14,18 @@ eureka:
     enabled: true
   #（★）服务端配置
   server:
-    #（▲）失效剔除
+    #（▲）失效剔除！！！
     #（无效服务）剔除时间间隔，默认60秒
     eviction-interval-timer-in-ms: 5000
-    #（▲）保护机制
+    #（▲）保护机制！！！
     #是否启用自我保护机制，默认true
     enable-self-preservation: false
-    #（▲）续约
-    #续约阈值更新间隔，默认15*60*1000毫秒
-    renewal-threshold-update-interval-ms: 10000
-    #续约阈值百分比，15分钟内的比例小于0.85，则开启自我保护机制
+    #续约阈值更新间隔，默认15分钟
+    renewal-threshold-update-interval-ms: 15000
+    #续约阈值百分比，默认0.85；即15分钟内的比例小于0.85，则开启自我保护机制
     #在此期间不会清除已注册的任何服务（即便是无效服务）
     renewal-percent-threshold: 0.85
+    #（▲）续约
     #希望客户端续约时间间隔，默认30秒
     expected-client-renewal-interval-seconds: 30
     #（▲）响应缓存
