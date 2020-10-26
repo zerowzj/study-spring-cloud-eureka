@@ -3,7 +3,7 @@ server:
   port: @server.port@
 #
 logging:
-  config: classpath:logback.xml
+  config: classpath:logback-spring.xml
 #
 spring:
   application:
