@@ -107,12 +107,14 @@
             </properties>
             <build>
                 <plugins>
+                    <!-- 自动部署 -->
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>wagon-maven-plugin</artifactId>
                         <version>2.0.0</version>
                         <configuration>
                             <url><![CDATA[scp://root:wzj!#135@150.158.115.10/xdfapp]]></url>
+<!--                            <url><![CDATA[scp://root:RediS!.203xdf@172.24.30.203/xdfapp]]></url>-->
                             <fromFile>target/${project.artifactId}-${project.version}.jar</fromFile>
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
@@ -131,6 +133,7 @@
             </properties>
             <build>
                 <plugins>
+                    <!-- 生成镜像文件并推送到镜像库 -->
                     <plugin>
                         <groupId>com.spotify</groupId>
                         <artifactId>dockerfile-maven-plugin</artifactId>
