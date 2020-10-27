@@ -23,12 +23,12 @@ GC_LOG_FILE=$LOG_DIR/gc.log
 #shopt -s  expand_aliases
 #shopt expand_aliases
 
-#（★）环境变量
+#环境变量
 source /etc/profile
 #export JAVA_HOME=/usr/jdk1.8.0_162
 #export PATH=$PATH:$JAVA_HOME/bin
 
-#（★）启动参数
+#启动参数
 JAVA_DEBUG_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n "
 JAVA_JMX_OPTS=" -Dcom.sun.management.jmxremote.port=13002 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false "
 JAVA_MEM_OPTS=" -server -Xms1g -Xmx1g -Xmn256m -Xss256k"
@@ -48,7 +48,7 @@ start() {
     echo "ERROR: Server running on $pid"
     exit 0
   fi
-  nohup java $JAVA_OPTS -jar $DEPLOY_HOME/$JAR_NAME  &
+  nohup java $JAVA_OPTS -jar $DEPLOY_HOME/$JAR_NAME &
   sleep 1
   pid=$(get_pid)
   if [ $? -eq 0 ]; then
@@ -86,9 +86,7 @@ status() {
   exit 0
 }
 
-####################
 #（★）入口
-####################
 case $1 in
 start)
   start
