@@ -6,7 +6,7 @@
     <id>${project.artifactId}-assembly-${project.version}</id>
     <!-- 基本目录 -->
     <includeBaseDirectory>true</includeBaseDirectory>
-    <baseDirectory>aa</baseDirectory>
+    <baseDirectory></baseDirectory>
     <formats>
         <format>dir</format>
     </formats>
@@ -15,7 +15,7 @@
         <fileSet>
             <directory>src/main/scripts</directory>
             <!-- 输出目录 -->
-            <outputDirectory>bb</outputDirectory>
+            <outputDirectory></outputDirectory>
             <includes>
                 <include>*.*</include>
             </includes>
@@ -26,7 +26,7 @@
     <files>
         <file>
             <source>target/${project.artifactId}-${project.version}.jar</source>
-            <outputDirectory>cc</outputDirectory>
+            <outputDirectory></outputDirectory>
             <fileMode>0755</fileMode>
         </file>
     </files>
