@@ -49,7 +49,7 @@
             <version>1.4.7.RELEASE</version>
         </dependency>
         <!-- ============================== -->
-        <!--（★）安全                       -->
+        <!--（★）Spring Security            -->
         <!-- ============================== -->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->
@@ -65,7 +65,7 @@
     </dependencies>
 
     <build>
-        <!--  -->
+        <!-- wagon -->
         <extensions>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
@@ -87,6 +87,28 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <skipAssembly>false</skipAssembly>
+                    <outputDirectory>target/dist</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -107,14 +129,14 @@
             </properties>
             <build>
                 <plugins>
-                    <!-- 自动部署 -->
+                    <!-- （▲）自动部署 -->
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>wagon-maven-plugin</artifactId>
                         <version>2.0.0</version>
                         <configuration>
                             <url><![CDATA[scp://wzhj:wzj!#135@150.158.110.15/xdfapp/${project.artifactId}]]></url>
-                            <fromFile>target/${project.artifactId}-${project.version}.jar</fromFile>
+                            <fromDir>target/dist</fromDir>
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
                                 <command>cd /xdfapp/${project.artifactId}</command>
@@ -132,7 +154,7 @@
             </properties>
             <build>
                 <plugins>
-                    <!-- 生成镜像文件并推送到镜像库 -->
+                    <!-- （▲）生成镜像文件并推送到镜像库 -->
                     <plugin>
                         <groupId>com.spotify</groupId>
                         <artifactId>dockerfile-maven-plugin</artifactId>
