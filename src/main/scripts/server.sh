@@ -9,13 +9,13 @@ PROJECT_NAME=study-springcloud-eureka
 #JAR文件
 JAR_FILE=study-springcloud-eureka-1.0.jar
 #部署目录
-DEPLOY_HOME=$(pwd)
+DEPLOY_DIR=$(pwd)
 #日志目录
 LOG_DIR=/xdfapp/logs/$PROJECT_NAME
-#标准输出文件
-STDOUT_FILE=stdout.%Y-%m-%d.log
-# GC日志文件
-GC_LOG_FILE=gc.log
+#标准输出
+STDOUT_LOG=$LOG_DIR/stdout.%Y-%m-%d.log
+# GC日志
+GC_LOG=$LOG_DIR/gc.log
 
 #alias gpid="ps -ef |grep $CONF_DIR |grep $LIB_DIR |grep -v grep |awk '{print $2}'"
 #pid=`gpid`
@@ -37,7 +37,7 @@ JAVA_OPTS=$JAVA_MEM_OPTS
 
 #获取pid
 get_pid() {
-  pid=$(ps -ef | grep $JAR_NAME | grep -v grep | awk '{print $2}')
+  pid=$(ps -ef | grep $JAR_FILE | grep -v grep | awk '{print $2}')
   echo "$pid"
 }
 #启动
@@ -48,7 +48,7 @@ start() {
     echo "ERROR: Server running on $pid"
     exit 0
   fi
-  nohup java $JAVA_OPTS -jar $DEPLOY_HOME/$JAR_NAME &
+  nohup java $JAVA_OPTS -jar $DEPLOY_DIR/$JAR_FILE >$STDOUT_LOG 2>&1 &
   sleep 1
   pid=$(get_pid)
   if [ $? -eq 0 ]; then
