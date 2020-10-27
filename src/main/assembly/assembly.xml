@@ -4,8 +4,9 @@
           http://maven.apache.org/xsd/assembly-2.6.xsd">
     <!--（★）基本信息 -->
     <id>${project.artifactId}-assembly-${project.version}</id>
-    <includeBaseDirectory>false</includeBaseDirectory>
-    <baseDirectory></baseDirectory>
+    <!-- 基本目录 -->
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <baseDirectory>aa</baseDirectory>
     <formats>
         <format>dir</format>
     </formats>
@@ -13,7 +14,8 @@
     <fileSets>
         <fileSet>
             <directory>src/main/scripts</directory>
-            <outputDirectory></outputDirectory>
+            <!-- 输出目录 -->
+            <outputDirectory>bb</outputDirectory>
             <includes>
                 <include>*.*</include>
             </includes>
@@ -24,7 +26,7 @@
     <files>
         <file>
             <source>target/${project.artifactId}-${project.version}.jar</source>
-            <outputDirectory></outputDirectory>
+            <outputDirectory>cc</outputDirectory>
             <fileMode>0755</fileMode>
         </file>
     </files>

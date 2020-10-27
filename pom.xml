@@ -98,7 +98,8 @@
                     </descriptors>
                     <appendAssemblyId>false</appendAssemblyId>
                     <skipAssembly>false</skipAssembly>
-                    <workDirectory>dist</workDirectory>
+<!--                    <workDirectory>dist</workDirectory>-->
+                    <basedir>/123</basedir>
                     <outputDirectory>target/dist</outputDirectory>
                 </configuration>
                 <executions>
@@ -142,7 +143,7 @@
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
                                 <command>cd /xdfapp/${project.artifactId}</command>
-                                <command>sh /xdfapp/server.sh restart</command>
+                                <command>sh /xdfapp/${project.artifactId}/server.sh restart</command>
                             </commands>
                         </configuration>
                     </plugin>
