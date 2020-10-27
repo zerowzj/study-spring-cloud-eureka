@@ -97,7 +97,7 @@
                         <descriptor>src/main/assembly/assembly.xml</descriptor>
                     </descriptors>
                     <appendAssemblyId>false</appendAssemblyId>
-                    <skipAssembly>true</skipAssembly>
+                    <skipAssembly>false</skipAssembly>
                     <workDirectory>dist</workDirectory>
                     <outputDirectory>target/dist</outputDirectory>
                 </configuration>
