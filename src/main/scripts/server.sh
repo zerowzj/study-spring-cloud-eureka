@@ -6,16 +6,16 @@ cd $(dirname $0)
 
 #项目名称
 PROJECT_NAME=study-springcloud-eureka
-#JAR文件名
-JAR_NAME=study-springcloud-eureka-1.0.jar
+#JAR文件
+JAR_FILE=study-springcloud-eureka-1.0.jar
 #部署目录
 DEPLOY_HOME=$(pwd)
 #日志目录
 LOG_DIR=/xdfapp/logs/$PROJECT_NAME
 #标准输出文件
-STDOUT_FILE=$LOG_DIR/stdout.%Y-%m-%d.log
+STDOUT_FILE=stdout.%Y-%m-%d.log
 # GC日志文件
-GC_LOG_FILE=$LOG_DIR/gc.log
+GC_LOG_FILE=gc.log
 
 #alias gpid="ps -ef |grep $CONF_DIR |grep $LIB_DIR |grep -v grep |awk '{print $2}'"
 #pid=`gpid`
