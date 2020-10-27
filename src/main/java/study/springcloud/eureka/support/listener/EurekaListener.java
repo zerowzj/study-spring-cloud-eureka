@@ -21,7 +21,9 @@ public class EurekaListener {
     public void listen(EurekaInstanceCanceledEvent event) {
         String serviceId = event.getServerId();
         String appName = event.getAppName();
+        log.info(">>>>>>");
         log.info(">>>>>> service [{}  {}] cancel", appName, serviceId);
+        log.info(">>>>>>");
     }
 
     /**
@@ -33,7 +35,9 @@ public class EurekaListener {
         String id = instanceInfo.getId();
         String appName = instanceInfo.getAppName();
         int leaseDuration = event.getLeaseDuration();
+        log.info(">>>>>>");
         log.info(">>>>>> service [{}, {}] register",  appName, id);
+        log.info(">>>>>>");
     }
 
     /**
@@ -44,7 +48,9 @@ public class EurekaListener {
         String serviceId = event.getServerId();
         String appName = event.getAppName();
         event.getInstanceInfo();
+        log.info(">>>>>>");
         log.info(">>>>>> service [{}, {}] renewal", appName, serviceId);
+        log.info(">>>>>>");
     }
 
     /**
