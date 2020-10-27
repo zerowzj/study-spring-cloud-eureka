@@ -144,8 +144,8 @@
                             <fromDir>target/dist</fromDir>
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
-                                <command>cd /xdfapp/${project.artifactId}-${project.version}</command>
-                                <command>sh /xdfapp/${project.artifactId}-${project.version}/server.sh restart</command>
+                                <command>sudo cd /xdfapp/${project.artifactId}-${project.version}</command>
+                                <command>sudo sh /xdfapp/${project.artifactId}-${project.version}/server.sh restart</command>
                             </commands>
                         </configuration>
                     </plugin>

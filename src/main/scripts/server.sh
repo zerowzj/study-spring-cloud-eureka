@@ -1,16 +1,15 @@
 #!/bin/sh
-#进入部署目录
+#进入脚本目录
 cd $(dirname $0)
-cd ..
+#返回上级目录
+# cd ..
 
 #项目名称
-PROJECT_NAME=study-springboot-eureka
+PROJECT_NAME=study-springcloud-eureka
 #JAR文件名
-JAR_NAME=study-springboot-eureka-1.0.jar
+JAR_NAME=study-springcloud-eureka-1.0.jar
 #部署目录
 DEPLOY_HOME=$(pwd)
-#Lib目录
-LIB_DIR=$DEPLOY_HOME
 #日志目录
 LOG_DIR=/xdfapp/logs/$PROJECT_NAME
 #标准输出文件
@@ -49,7 +48,7 @@ start() {
     echo "ERROR: Server running on $pid"
     exit 0
   fi
-  nohup java $JAVA_OPTS -jar $LIB_DIR/$JAR_NAME >/dev/null 2>&1 &
+  nohup java $JAVA_OPTS -jar $DEPLOY_HOME/$JAR_NAME  &
   sleep 1
   pid=$(get_pid)
   if [ $? -eq 0 ]; then
