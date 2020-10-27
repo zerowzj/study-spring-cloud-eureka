@@ -37,6 +37,7 @@ eureka:
     #响应缓存更新时间间隔
     response-cache-update-interval-ms: 0
     initial-capacity-of-response-cache: 1000
+
     #（）集群连接
     #对等节点连接超时时间
     peer-node-connect-timeout-ms: 1
@@ -49,7 +50,8 @@ eureka:
     number-of-replication-retries: 5
     #server启动时，不能从对等节点获取instance注册信息的情况，应等待多长时间
     wait-time-in-ms-when-sync-empty: 0
-    #（▲）自定义工具配置
+
+    #自定义工具配置
     #Json编解码器名称
     #json-codec-name:
     #属性解析器名称
