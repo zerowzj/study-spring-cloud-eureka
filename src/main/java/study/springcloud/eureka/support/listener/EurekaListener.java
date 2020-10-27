@@ -2,6 +2,7 @@ package study.springcloud.eureka.support.listener;
 
 import com.netflix.appinfo.InstanceInfo;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.client.discovery.event.HeartbeatEvent;
 import org.springframework.cloud.netflix.eureka.server.event.EurekaInstanceCanceledEvent;
 import org.springframework.cloud.netflix.eureka.server.event.EurekaInstanceRegisteredEvent;
 import org.springframework.cloud.netflix.eureka.server.event.EurekaInstanceRenewedEvent;
@@ -14,13 +15,24 @@ import org.springframework.stereotype.Component;
 @Component
 public class EurekaListener {
 
+    @EventListener
+    public void listen(HeartbeatEvent event) {
+        //
+        event.getValue();
+        log.info(">>>>>>");
+        log.info(">>>>>> service [{}  {}] hear beat");
+        log.info(">>>>>>");
+    }
+
     /**
      * 服务下线
      */
     @EventListener
     public void listen(EurekaInstanceCanceledEvent event) {
-        String serviceId = event.getServerId();
+        //
         String appName = event.getAppName();
+        //
+        String serviceId = event.getServerId();
         log.info(">>>>>>");
         log.info(">>>>>> service [{}  {}] cancel", appName, serviceId);
         log.info(">>>>>>");
@@ -31,10 +43,13 @@ public class EurekaListener {
      */
     @EventListener
     public void listen(EurekaInstanceRegisteredEvent event) {
+        //
+        int leaseDuration = event.getLeaseDuration();
+        //
         InstanceInfo instanceInfo = event.getInstanceInfo();
         String id = instanceInfo.getId();
         String appName = instanceInfo.getAppName();
-        int leaseDuration = event.getLeaseDuration();
+
         log.info(">>>>>>");
         log.info(">>>>>> service [{}, {}] register",  appName, id);
         log.info(">>>>>>");
@@ -45,8 +60,11 @@ public class EurekaListener {
      */
     @EventListener
     public void listen(EurekaInstanceRenewedEvent event) {
-        String serviceId = event.getServerId();
+        //
         String appName = event.getAppName();
+        //
+        String serviceId = event.getServerId();
+
         event.getInstanceInfo();
         log.info(">>>>>>");
         log.info(">>>>>> service [{}, {}] renewal", appName, serviceId);
