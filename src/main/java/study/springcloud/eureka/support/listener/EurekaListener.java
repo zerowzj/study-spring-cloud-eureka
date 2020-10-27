@@ -19,7 +19,7 @@ public class EurekaListener {
      * 服务下线
      */
     @EventListener
-    public void listen(EurekaInstanceCanceledEvent event) {
+    public void canceledListen(EurekaInstanceCanceledEvent event) {
         //
         String appName = event.getAppName();
         //
@@ -34,7 +34,7 @@ public class EurekaListener {
      * 服务注册
      */
     @EventListener
-    public void listen(EurekaInstanceRegisteredEvent event) {
+    public void registeredListen(EurekaInstanceRegisteredEvent event) {
         //
         int leaseDuration = event.getLeaseDuration();
         //实例信息
@@ -52,7 +52,7 @@ public class EurekaListener {
      * 服务续约
      */
     @EventListener
-    public void listen(EurekaInstanceRenewedEvent event) {
+    public void renewedListen(EurekaInstanceRenewedEvent event) {
         //
         String appName = event.getAppName();
         //
