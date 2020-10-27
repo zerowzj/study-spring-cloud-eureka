@@ -87,6 +87,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <!-- （▲）打包 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -96,7 +97,8 @@
                         <descriptor>src/main/assembly/assembly.xml</descriptor>
                     </descriptors>
                     <appendAssemblyId>false</appendAssemblyId>
-                    <skipAssembly>false</skipAssembly>
+                    <skipAssembly>true</skipAssembly>
+                    <workDirectory>dist</workDirectory>
                     <outputDirectory>target/dist</outputDirectory>
                 </configuration>
                 <executions>
