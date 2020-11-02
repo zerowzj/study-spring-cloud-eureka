@@ -3,7 +3,6 @@ package study.springcloud.eureka.support.listener;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.appinfo.LeaseInfo;
 import lombok.extern.slf4j.Slf4j;
-import org.bouncycastle.util.Strings;
 import org.springframework.cloud.netflix.eureka.server.event.EurekaInstanceCanceledEvent;
 import org.springframework.cloud.netflix.eureka.server.event.EurekaInstanceRegisteredEvent;
 import org.springframework.cloud.netflix.eureka.server.event.EurekaInstanceRenewedEvent;
@@ -30,7 +29,7 @@ public class EurekaListener {
         String appName = instanceInfo.getAppName();
 
         log.info(">>>>>>");
-        log.info(">>>>>> [{}, {}, {}] Register", appName, id, leaseDuration);
+        log.info(">>>>>> register: [{}, {}, {}]", appName, id, leaseDuration);
         log.info(">>>>>>");
     }
 
@@ -54,7 +53,7 @@ public class EurekaListener {
         leaseInfo.getServiceUpTimestamp();
 
         log.info(">>>>>>");
-        log.info(">>>>>> [{}, {}] Renewal", appName, serverId);
+        log.info(">>>>>> renewal: [{}, {}]", appName, serverId);
         log.info(">>>>>>");
     }
 
@@ -69,7 +68,7 @@ public class EurekaListener {
         String serverId = event.getServerId();
 
         log.info(">>>>>>");
-        log.info(">>>>>> [{}  {}] Cancel", appName, serverId);
+        log.info(">>>>>> cancel: [{}  {}]", appName, serverId);
         log.info(">>>>>>");
     }
 
