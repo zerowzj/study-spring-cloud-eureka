@@ -97,9 +97,9 @@
                     </descriptors>
                     <appendAssemblyId>false</appendAssemblyId>
                     <skipAssembly>false</skipAssembly>
-                    <!--  -->
+                    <!-- 工作目录 -->
                     <workDirectory>ABC</workDirectory>
-                    <!--  -->
+                    <!-- 基本目录 -->
                     <basedir></basedir>
                     <!-- 输出目录 -->
                     <outputDirectory>target/dist</outputDirectory>
