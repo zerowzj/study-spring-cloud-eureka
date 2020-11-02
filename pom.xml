@@ -41,7 +41,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- ============================== -->
-        <!--（★）Eureka Server              -->
+        <!--（★）SpringCloud Eureka Server  -->
         <!-- ============================== -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
