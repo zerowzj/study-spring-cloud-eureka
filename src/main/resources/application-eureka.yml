@@ -3,23 +3,23 @@ eureka:
   #实例配置
   instance:
     hostname: @eureka.host.name@
+    ip-address: 150.158.110.15
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
   #客户端配置
   client:
     service-url:
       defaultZone: @eureka.server.list@
+    enabled: true
     register-with-eureka: false
     fetch-registry: false
-    enabled: true
   #服务端配置
   server:
     #（★）续约！！！
-    #（无效服务）剔除时间间隔，默认60秒
+    #无效服务剔除时间间隔，默认60秒
     eviction-interval-timer-in-ms: 5000
     #希望客户端续约时间间隔，默认30秒
     expected-client-renewal-interval-seconds: 30
-
     #（★）保护机制！！！
     #是否启用自我保护机制，默认true
     enable-self-preservation: false
