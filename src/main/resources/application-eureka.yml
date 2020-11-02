@@ -3,7 +3,7 @@ eureka:
   #实例配置
   instance:
     hostname: @eureka.host.name@
-    ip-address: 150.158.110.15
+    #ip-address: 150.158.110.15
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
   #客户端配置
