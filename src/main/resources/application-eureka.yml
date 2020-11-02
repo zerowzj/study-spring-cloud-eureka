@@ -15,7 +15,7 @@ eureka:
     fetch-registry: false
   #服务端配置
   server:
-    #（★）续约！！！
+    #（★）续约相关！！！
     #无效服务剔除时间间隔，默认60秒
     eviction-interval-timer-in-ms: 5000
     #希望客户端续约时间间隔，默认30秒
