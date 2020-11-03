@@ -10,12 +10,11 @@ PROJECT_NAME=study-springcloud-eureka
 JAR_FILE=study-springcloud-eureka-1.0.jar
 #部署目录
 DEPLOY_DIR=$(pwd)
-#日志目录
-LOG_DIR=/xdfapp/logs/$PROJECT_NAME
+
 #标准输出
-STDOUT_LOG=$LOG_DIR/stdout.%Y-%m-%d.log
+STDOUT_LOG=/xdfapp/logs/$PROJECT_NAME/stdout.log
 # GC日志
-GC_LOG=$LOG_DIR/gc.log
+GC_LOG=/xdfapp/logs/$PROJECT_NAME/gc.log
 
 #alias gpid="ps -ef |grep $CONF_DIR |grep $LIB_DIR |grep -v grep |awk '{print $2}'"
 #pid=`gpid`
@@ -31,7 +30,7 @@ source /etc/profile
 #启动参数
 JAVA_DEBUG_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n "
 JAVA_JMX_OPTS=" -Dcom.sun.management.jmxremote.port=13002 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false "
-JAVA_MEM_OPTS=" -server -Xms1g -Xmx1g -Xmn256m -Xss256k"
+JAVA_MEM_OPTS=" -server -Xms512m -Xmx512m -Xmn256m -Xss256k"
 JAVA_GC_OPTS=" -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintClassHistogram -XX:-TraceClassUnloading -verbose:gc -Xloggc:"$GC_LOG_FILE
 JAVA_OPTS=$JAVA_MEM_OPTS
 

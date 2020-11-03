@@ -30,7 +30,7 @@ eureka:
     renewal-percent-threshold: 0.85
 
     #（）响应缓存
-    #
+    #只读
     use-read-only-response-cache: false
     #响应缓存自动过期时间
     response-cache-auto-expiration-in-seconds: 180
