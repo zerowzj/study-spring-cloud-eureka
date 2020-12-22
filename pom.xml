@@ -97,11 +97,11 @@
                     <appendAssemblyId>false</appendAssemblyId>
                     <skipAssembly>false</skipAssembly>
                     <!-- 工作目录 -->
-                    <workDirectory>abc</workDirectory>
+                    <workDirectory></workDirectory>
                     <!-- 基本目录 -->
                     <basedir></basedir>
-                    <!-- 输出目录 -->
-                    <outputDirectory>target/dist</outputDirectory>
+                    <!-- 打包文件输出目录 -->
+                    <outputDirectory>target</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -127,9 +127,9 @@
             </activation>
         </profile>
         <profile>
-            <id>dev</id>
+            <id>ecs</id>
             <properties>
-                <env>dev</env>
+                <env>ecs</env>
             </properties>
             <build>
                 <plugins>
@@ -140,11 +140,12 @@
                         <version>2.0.0</version>
                         <configuration>
                             <url><![CDATA[scp://wzhj:wzj!#135@150.158.110.15/xdfapp]]></url>
-                            <fromDir>target/dist</fromDir>
+                            <fromFile>target/${project.artifactId}-${project.version}.tar.gz</fromFile>
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
-                                <command>cd /xdfapp/${project.artifactId}-${project.version}</command>
-                                <command>sh /xdfapp/${project.artifactId}-${project.version}/server.sh restart</command>
+                                <command>cd /xdfapp; tar -zxvf ${project.artifactId}-${project.version}.tar.gz</command>
+<!--                                <command></command>-->
+<!--                                <command>sh /xdfapp/${project.artifactId}-${project.version}/server.sh restart</command>-->
                             </commands>
                         </configuration>
                     </plugin>
