@@ -143,8 +143,8 @@
                             <fromFile>target/${project.artifactId}-${project.version}.tar.gz</fromFile>
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
-                                <command>cd /xdfapp; tar -zxvf ${project.artifactId}-${project.version}.tar.gz</command>
-<!--                                <command></command>-->
+                                <command>cd /xdfapp</command>
+                                <command>sudo tar -zxvf ${project.artifactId}-${project.version}.tar.gz</command>
 <!--                                <command>sh /xdfapp/${project.artifactId}-${project.version}/server.sh restart</command>-->
                             </commands>
                         </configuration>
