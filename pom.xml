@@ -140,12 +140,13 @@
                         <version>2.0.0</version>
                         <configuration>
                             <url><![CDATA[scp://wzhj:wzj!#135@150.158.110.15/xdfapp]]></url>
+                            <!-- 文件 -->
                             <fromFile>target/${project.artifactId}-${project.version}.tar.gz</fromFile>
+                            <!-- 命令 -->
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
-                                <command>cd /xdfapp</command>
-                                <command>sudo tar -zxvf ${project.artifactId}-${project.version}.tar.gz</command>
-<!--                                <command>sh /xdfapp/${project.artifactId}-${project.version}/server.sh restart</command>-->
+                                <command>tar -xvf /xdfapp/${project.artifactId}-${project.version}.tar.gz</command>
+                                <command>sh /xdfapp/${project.artifactId}/server.sh restart</command>
                             </commands>
                         </configuration>
                     </plugin>
