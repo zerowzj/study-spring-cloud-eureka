@@ -8,6 +8,7 @@
     <includeBaseDirectory>true</includeBaseDirectory>
     <!-- 基本目录 -->
     <baseDirectory>study-springcloud-eureka</baseDirectory>
+    <!-- 打包文件格式 -->
     <formats>
         <format>tar.gz</format>
     </formats>
