@@ -30,7 +30,7 @@ source /etc/profile
 #启动参数
 JAVA_DEBUG_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n "
 JAVA_JMX_OPTS=" -Dcom.sun.management.jmxremote.port=13002 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false "
-JAVA_MEM_OPTS=" -server -Xms512m -Xmx512m -Xmn256m -Xss256k"
+JAVA_MEM_OPTS=" -server -Xms256m -Xmx256m -Xmn128m -Xss256k"
 JAVA_GC_OPTS=" -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintClassHistogram -XX:-TraceClassUnloading -verbose:gc -Xloggc:"$GC_LOG_FILE
 JAVA_OPTS=$JAVA_MEM_OPTS
 
