@@ -95,13 +95,13 @@
                         <descriptor>src/main/assembly/assembly.xml</descriptor>
                     </descriptors>
                     <appendAssemblyId>false</appendAssemblyId>
-                    <skipAssembly>false</skipAssembly>
-                    <!-- 工作目录 -->
-                    <workDirectory></workDirectory>
-                    <!-- 基本目录 -->
-                    <basedir></basedir>
-                    <!-- 打包文件输出目录 -->
-                    <outputDirectory>target</outputDirectory>
+                    <!--                    <skipAssembly>false</skipAssembly>-->
+                    <!--                    &lt;!&ndash; 工作目录 &ndash;&gt;-->
+                    <!--                    <workDirectory></workDirectory>-->
+                    <!--                    &lt;!&ndash; 基本目录 &ndash;&gt;-->
+                    <!--                    <basedir></basedir>-->
+                    <!--                    &lt;!&ndash; 打包文件输出目录 &ndash;&gt;-->
+                    <!--                    <outputDirectory></outputDirectory>-->
                 </configuration>
                 <executions>
                     <execution>
@@ -145,7 +145,8 @@
                             <!-- 命令 -->
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
-                                <command>tar -xvf /xdfapp/${project.artifactId}-${project.version}.tar.gz</command>
+                                <command>tar -zxvf /xdfapp/${project.artifactId}-${project.version}.tar.gz</command>
+                                <command>rm -rf /xdfapp/${project.artifactId}</command>
                                 <command>sh /xdfapp/${project.artifactId}/server.sh restart</command>
                             </commands>
                         </configuration>
