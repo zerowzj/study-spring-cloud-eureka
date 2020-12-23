@@ -1,7 +1,4 @@
-<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/2.6"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/2.6
-          http://maven.apache.org/xsd/assembly-2.6.xsd">
+<assembly>
     <!--（★）基本信息 -->
     <id>${project.artifactId}-assembly-${project.version}</id>
     <!-- 是否含基本目录 -->
