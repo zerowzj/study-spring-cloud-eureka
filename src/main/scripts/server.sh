@@ -48,7 +48,7 @@ start() {
     exit 0
   fi
   nohup java $JAVA_OPTS -jar $DEPLOY_DIR/$JAR_FILE >$STDOUT_LOG 2>&1 &
-  sleep 3
+  sleep 2
   pid=$(get_pid)
   if [ $? -eq 0 ]; then
     echo "STARTED PID: $pid"
