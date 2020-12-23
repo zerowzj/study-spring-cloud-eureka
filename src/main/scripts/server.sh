@@ -30,7 +30,7 @@ source /etc/profile
 #启动参数
 JAVA_DEBUG_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n "
 JAVA_JMX_OPTS=" -Dcom.sun.management.jmxremote.port=13002 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false "
-JAVA_MEM_OPTS=" -server -Xms256m -Xmx256m -Xmn128m -Xss128k"
+JAVA_MEM_OPTS=" -server -Xms256m -Xmx256m -Xmn128m -Xss256k"
 JAVA_GC_OPTS=" -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintClassHistogram -XX:-TraceClassUnloading -verbose:gc -Xloggc:"$GC_LOG_FILE
 JAVA_OPTS=$JAVA_MEM_OPTS
 
@@ -48,7 +48,7 @@ start() {
     exit 0
   fi
   nohup java $JAVA_OPTS -jar $DEPLOY_DIR/$JAR_FILE >$STDOUT_LOG 2>&1 &
-  sleep 1
+  sleep 3
   pid=$(get_pid)
   if [ $? -eq 0 ]; then
     echo "STARTED PID: $pid"

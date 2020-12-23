@@ -139,15 +139,18 @@
                         <artifactId>wagon-maven-plugin</artifactId>
                         <version>2.0.0</version>
                         <configuration>
-                            <url><![CDATA[scp://wzhj:wzj!#135@150.158.110.15/xdfapp]]></url>
                             <!-- 文件 -->
                             <fromFile>target/${project.artifactId}-${project.version}.tar.gz</fromFile>
+                            <!-- URL -->
+                            <url><![CDATA[scp://wzhj:wzj!#135@150.158.110.15/xdfapp]]></url>
                             <!-- 命令 -->
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
                                 <command>rm -rf /xdfapp/${project.artifactId}</command>
                                 <command>mkdir /xdfapp/${project.artifactId}</command>
-                                <command>tar -xvf /xdfapp/${project.artifactId}-${project.version}.tar.gz</command>
+                                <command>sleep 2</command>
+                                <command>tar -xf /xdfapp/${project.artifactId}-${project.version}.tar.gz</command>
+                                <command>sleep 2</command>
                                 <command>sh /xdfapp/${project.artifactId}/server.sh restart</command>
                             </commands>
                         </configuration>
