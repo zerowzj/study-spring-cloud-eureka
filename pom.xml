@@ -145,8 +145,9 @@
                             <!-- 命令 -->
                             <displayCommandOutputs>true</displayCommandOutputs>
                             <commands>
-                                <command>tar -zxvf /xdfapp/${project.artifactId}-${project.version}.tar.gz</command>
                                 <command>rm -rf /xdfapp/${project.artifactId}</command>
+                                <command>mkdir /xdfapp/${project.artifactId}</command>
+                                <command>tar -xvf /xdfapp/${project.artifactId}-${project.version}.tar.gz</command>
                                 <command>sh /xdfapp/${project.artifactId}/server.sh restart</command>
                             </commands>
                         </configuration>
